@@ -1,0 +1,8 @@
+# Private CSV Lead Lists
+*.csv
+
+# Environment & Virtualenvs
+.env
+.venv/
+node_modules/
+.DS_Store

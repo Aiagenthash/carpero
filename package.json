@@ -1,0 +1,19 @@
+{
+  "name": "hvac-revenue-recovery-autopilot",
+  "version": "1.0.0",
+  "description": "Production-ready landing page for The 24/7 HVAC Revenue Recovery Autopilot™",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "hvac",
+    "landing-page",
+    "voice-ai",
+    "revenue-recovery",
+    "servicetitan"
+  ],
+  "author": "Revenue Recovery Systems",
+  "license": "MIT"
+}
