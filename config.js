@@ -47,7 +47,7 @@ window.HVAC_CONFIG = {
   // GoHighLevel (LeadConnector) Integration
   ghl: {
     locationId: "4rsitvcF0nWZXBh5xzf8",
-    calendarId: "zwfPhp42K4ru01jEg1V5",
+    calendarId: "Orm5YQIwK1MgN9w5Z2Vw",
     pipelineId: "WeVSKhJlQeCBr6MXxAbF"
   },
 
@@ -57,7 +57,7 @@ window.HVAC_CONFIG = {
   
   // Calendar / Booking Link (Calendly, Cal.com, or GHL calendar URL)
   // Set this to open your calendar inside the confirmation modal or redirect
-  calendarBookingUrl: "https://link.leadconnectorhq.com/widget/booking/zwfPhp42K4ru01jEg1V5",
+  calendarBookingUrl: "https://api.leadconnectorhq.com/widget/booking/Orm5YQIwK1MgN9w5Z2Vw",
 
   // Demo Audio Simulation Defaults
   audioDemo: {
