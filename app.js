@@ -296,6 +296,26 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmCompany.textContent = companyName || ownerName || "your company";
           }
 
+          // Dynamically pre-fill the embedded GHL LeadConnector calendar iframe
+          const ghlIframe = document.getElementById('ghlBookingIframe');
+          const baseWidgetUrl = "https://api.leadconnectorhq.com/widget/booking/Orm5YQIwK1MgN9w5Z2Vw";
+          try {
+            const widgetUrl = new URL(baseWidgetUrl);
+            if (ownerName) {
+              const nameParts = ownerName.trim().split(/\s+/);
+              widgetUrl.searchParams.set('first_name', nameParts[0] || '');
+              if (nameParts.length > 1) {
+                widgetUrl.searchParams.set('last_name', nameParts.slice(1).join(' '));
+              }
+              widgetUrl.searchParams.set('name', ownerName);
+            }
+            if (email) widgetUrl.searchParams.set('email', email);
+            if (phone) widgetUrl.searchParams.set('phone', phone);
+            if (ghlIframe) ghlIframe.src = widgetUrl.toString();
+          } catch (e) {
+            if (ghlIframe) ghlIframe.src = baseWidgetUrl;
+          }
+
           const calendlyBtn = document.getElementById('openCalendlyBtn');
           if (calendlyBtn && config.calendarBookingUrl) {
             try {

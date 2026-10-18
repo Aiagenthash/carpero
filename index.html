@@ -850,32 +850,36 @@
 
       <!-- Step 2: Instant Booking Step -->
       <div class="modal-step" id="modalStepSuccess">
-        <div style="text-align:center; padding:1.5rem 0;">
-          <div style="width:64px; height:64px; border-radius:50%; background:rgba(0, 245, 155, 0.15); border:2px solid #00F59B; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; color:#00F59B; font-size:1.75rem;">
+        <div style="text-align:center; padding:0.5rem 0;">
+          <div style="width:50px; height:50px; border-radius:50%; background:rgba(0, 245, 155, 0.15); border:2px solid #00F59B; display:flex; align-items:center; justify-content:center; margin:0 auto 0.5rem; color:#00F59B; font-size:1.4rem;">
             ✓
           </div>
-          <div class="pill-badge" style="margin-bottom:0.75rem;">AUDIT APPLICATION RECEIVED</div>
-          <h3 style="font-size:1.75rem; color:#FFFFFF; margin-bottom:0.5rem;">
+          <div class="pill-badge" style="margin-bottom:0.4rem;">AUDIT APPLICATION RECEIVED</div>
+          <h3 style="font-size:1.4rem; color:#FFFFFF; margin-bottom:0.25rem;">
             Your Founding Rate Is Locked!
           </h3>
-          <p style="color:#CBD5E1; font-size:0.95rem; margin-bottom:1.5rem;">
-            We have reserved your Founding Partner rate for <strong id="confirmedTerritoryName" style="color:#FFFFFF;">your company</strong>.
+          <p style="color:#CBD5E1; font-size:0.85rem; margin-bottom:1rem;">
+            Reserved for <strong id="confirmedTerritoryName" style="color:#FFFFFF;">your company</strong>. Select your 15-minute live dial slot below:
           </p>
 
-          <div style="background:rgba(0, 245, 155, 0.08); border:1px solid rgba(0, 245, 155, 0.3); border-radius:14px; padding:1.25rem; margin-bottom:2rem; text-align:left;">
-            <strong style="color:#FFFFFF; display:block; margin-bottom:0.35rem;">Final Step: Schedule Your 15-Minute Live Dial Test</strong>
-            <p style="font-size:0.85rem; color:#E0F2FE;">
-              Pick a quick 15-minute slot on our calendar below so we can dial your cell live and showcase your custom revenue recovery engine.
-            </p>
+          <!-- Direct GoHighLevel Calendar Widget -->
+          <div style="border-radius:14px; overflow:hidden; border:1px solid var(--carpero-border); background:#0F131C; min-height:480px; margin-bottom:1rem;">
+            <iframe 
+              src="https://api.leadconnectorhq.com/widget/booking/Orm5YQIwK1MgN9w5Z2Vw" 
+              style="width:100%; border:none; min-height:500px; display:block;" 
+              id="ghlBookingIframe"
+              scrolling="auto">
+            </iframe>
           </div>
 
-          <a href="https://discovery.carpero.com/calendar-page" target="_blank" id="openCalendlyBtn" class="btn btn-primary btn-full btn-lg" style="margin-bottom:1rem;">
-            📅 Select Your 15-Minute Demo Slot Now →
-          </a>
-
-          <button class="btn btn-outline btn-full btn-sm" onclick="document.getElementById('reservationModal').classList.remove('active');">
-            Close &amp; Return to Page
-          </button>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.8rem;">
+            <a href="https://discovery.carpero.com/calendar-page" target="_blank" id="openCalendlyBtn" style="color:var(--carpero-cyan); text-decoration:underline;">
+              Open in full window ↗
+            </a>
+            <button class="btn btn-outline btn-sm" onclick="document.getElementById('reservationModal').classList.remove('active');">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
