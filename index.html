@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>The 24/7 HVAC Revenue Recovery Autopilot™ | Recover $15k-$40k/Mo in Lost HVAC Jobs</title>
   <meta name="description" content="We plug a 24/7 AI Receptionist and automated quote-closing engine into your existing phone and dispatch system in 48 hours. If it doesn't recover at least 5 booked jobs in your first 30 days, you don't pay a penny.">
   <meta property="og:title" content="The 24/7 HVAC Revenue Recovery Autopilot™">
@@ -14,16 +14,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- ScrollCraft Engine Styles & Custom Taste Floor -->
+  <link rel="stylesheet" href="scrollcraft.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-notice-bar">
-    ⚠️ <strong>METRO TERRITORY EXCLUSIVITY WARNING:</strong> Maximum 2 HVAC contractors per metro territory. 
-    <span class="dynamic-spots-left" style="text-decoration: underline; font-weight:800; margin-left:4px;">2 Spots Remaining</span>.
-    <a href="#territory">Check Your Zip Code Availability ↓</a>
-  </div>
+  <!-- ScrollCraft Top Progress Indicator -->
+  <span data-sc-progress></span>
+
+  <!-- Subtle Filmic Grain Overlay -->
+  <div class="sc-grain" aria-hidden="true"></div>
 
   <!-- Header / Navigation -->
   <header class="site-header">
@@ -50,7 +51,7 @@
         <a href="tel:+18884822247" class="nav-phone-link dynamic-demo-phone">
           📞 (888) 482-2247
         </a>
-        <button class="btn btn-primary btn-sm open-claim-modal">
+        <button class="btn btn-primary btn-sm open-claim-modal" data-sc-magnet="0.2">
           Claim Territory
         </button>
         <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle Navigation">☰</button>
@@ -58,846 +59,835 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-pill-badge">
-            <span class="badge badge-cyan badge-pulse">
-              ⚡ 48-Hour Rapid DFY Deployment • Zero FSM Disruption
-            </span>
-          </div>
+  <main id="top">
 
-          <h1 class="hero-title">
-            The 24/7 HVAC <br>
-            <span class="text-gradient-cyan">Revenue Recovery</span> Autopilot™
-          </h1>
+    <!-- =========================================================================
+         ACT 1 · RECOGNITION: Pinned Dimensional Hero Stage
+         ========================================================================= -->
+    <section data-sc-act="pin" data-sc-span="2.2" data-sc-dwell="0.32" data-sc-drift="#06080C">
+      <div class="hero-sc-stage" data-sc-stage>
+        <!-- Parallax Atmosphere Layer -->
+        <div class="hero-atmosphere-plane" data-sc-parallax="-0.2"></div>
 
-          <div class="hero-hook-callout">
-            "We plug a <strong>24/7 AI Receptionist</strong> and <strong>automated quote-closing engine</strong> into your existing phone and dispatch system in 48 hours. If it doesn’t recover at least <strong>5 booked jobs</strong> you would have lost to voicemail or dead quotes in your first 30 days, <strong>you don’t pay a penny.</strong>"
-          </div>
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content" data-sc-cue="0 0.85 0">
+              <div class="hero-pill-badge">
+                <span class="badge badge-cyan badge-pulse">
+                  ⚡ 48-Hour Rapid Installation • Zero Office Retraining
+                </span>
+              </div>
 
-          <div class="hero-stats-row">
-            <div class="stat-pill">
-              <span class="number">$15k–$40k</span>
-              <span class="label">Monthly Cash Leaking To Voicemail</span>
-            </div>
-            <div class="stat-pill">
-              <span class="number">15 Seconds</span>
-              <span class="label">Speed-To-Lead Automated Text-Back</span>
-            </div>
-            <div class="stat-pill">
-              <span class="number">100% DFY</span>
-              <span class="label">Syncs With ServiceTitan, Jobber, HCP</span>
-            </div>
-          </div>
+              <h1 class="hero-title" data-sc-kinetic="lines">
+                The 24/7 HVAC <br>
+                <span class="text-gradient-cyan">Revenue Recovery</span> Autopilot™
+              </h1>
 
-          <div class="hero-actions">
-            <button class="btn btn-primary btn-lg open-claim-modal">
-              Check Territory & Claim Spot →
-            </button>
-            <a href="#demo" class="btn btn-outline btn-lg">
-              🔊 Hear Live AI Demo In Action
-            </a>
-          </div>
+              <div class="hero-hook-callout">
+                "We plug an <strong>AI Receptionist and automated quote-closing engine</strong> into your existing phone and dispatch system in 48 hours. If it doesn’t recover at least <strong>5 booked jobs</strong> you would have lost in your first 30 days, <strong>you don’t pay a penny.</strong>"
+              </div>
 
-          <div class="hero-guarantee-note">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
-            <span><strong>The Grand Slam Double Guarantee:</strong> 5 Recovered Jobs in 30 Days or 100% Refund + Keep All Assets.</span>
-          </div>
-        </div>
-
-        <!-- Hero Right Interactive Card -->
-        <div class="hero-visual-card">
-          <div class="visual-card-header">
-            <div class="live-indicator">LIVE SYSTEM RUNNING</div>
-            <span class="badge badge-gold">2 Rings Response</span>
-          </div>
-
-          <div class="incoming-call-box">
-            <div class="call-timer">AFTER-HOURS CALL DETECTED: 6:48 PM SATURDAY</div>
-            <div class="call-title">Emergency No-Cool Call Triaged</div>
-            <div class="call-desc">
-              AI answered on Ring 2 • Diagnostic quoted at $89 • Calendar checked for on-call tech window.
-            </div>
-          </div>
-
-          <div class="hero-dispatch-preview">
-            <div class="dispatch-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="m5 12 5 5L20 7"/>
-              </svg>
-              JOB RECOVERED &amp; DISPATCHED
-            </div>
-            <div class="dispatch-line"><strong>Customer:</strong> David Miller (412 Maple Ridge Rd)</div>
-            <div class="dispatch-line"><strong>Slot:</strong> Tomorrow 8:00 AM – 10:00 AM</div>
-            <div class="dispatch-line"><strong>Potential Ticket:</strong> $1,200 (Capacitor/Coil Repair)</div>
-            <div class="dispatch-line" style="color:var(--primary); font-weight:700;">Status: Synced to ServiceTitan Board + SMS Sent</div>
-          </div>
-
-          <div class="hero-phone-cta-banner">
-            <div class="title">WANT TO TEST IT RIGHT NOW ON YOUR CELL?</div>
-            <a href="tel:+18884822247" class="phone-number dynamic-demo-phone">
-              (888) 482-2247
-            </a>
-            <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.25rem;">
-              Dial live & pretend your furnace or AC is broken!
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Bar & FSM Logobar -->
-  <section class="trust-bar-section">
-    <div class="container">
-      <div class="trust-title">
-        PLUGS DIRECTLY INTO YOUR EXISTING FIELD SERVICE MANAGEMENT PLATFORM IN 48 HOURS (ZERO RETRAINING)
-      </div>
-      <div class="fsm-logo-grid">
-        <div class="fsm-logo-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          ServiceTitan
-        </div>
-        <div class="fsm-logo-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-          Housecall Pro
-        </div>
-        <div class="fsm-logo-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          Jobber
-        </div>
-        <div class="fsm-logo-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          FieldEdge
-        </div>
-        <div class="fsm-logo-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Google Calendar
-        </div>
-        <div class="fsm-logo-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          Zapier / Webhooks
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live Activity Ticker -->
-  <div class="live-activity-bar">
-    <div class="ticker-scroll-content">
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Apex Air (Dallas, TX):</strong> Recovered $1,350 Saturday evening capacitor repair (Ring 2)</div>
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Valley Climate (Phoenix, AZ):</strong> 11-second text-back booked $450 emergency diagnostic</div>
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Lone Star HVAC (Fort Worth, TX):</strong> Revived cold 19-day estimate into $14,200 heat pump replacement</div>
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Precision Heating (Atlanta, GA):</strong> 5-Star Google review captured automatically via SMS</div>
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Apex Air (Dallas, TX):</strong> Recovered $1,350 Saturday evening capacitor repair (Ring 2)</div>
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Valley Climate (Phoenix, AZ):</strong> 11-second text-back booked $450 emergency diagnostic</div>
-      <div class="ticker-item"><span class="ticker-dot"></span> <strong>Lone Star HVAC (Fort Worth, TX):</strong> Revived cold 19-day estimate into $14,200 heat pump replacement</div>
-    </div>
-  </div>
-
-  <!-- Interactive Demo Section (The 3-Minute Live Proof) -->
-  <section class="demo-section" id="demo">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-cyan">THE 3-MINUTE LIVE PROOF</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
-          Don't Take Our Word For It. <br>
-          <span class="text-gradient-cyan">Test The AI Right Now.</span>
-        </h2>
-        <p class="subtitle">
-          Contractors are sick of agencies showing 30-slide PowerPoints. Hear how our Voice AI handles real emergency calls and closes diagnostic bookings in real-time.
-        </p>
-      </div>
-
-      <!-- Demo Tabs -->
-      <div class="demo-tabs-nav">
-        <button class="demo-tab-btn active" data-tab="tab-voice">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-          1. Interactive Voice AI Simulator
-        </button>
-        <button class="demo-tab-btn" data-tab="tab-sms">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          2. 15-Sec Missed-Call Text-Back
-        </button>
-        <button class="demo-tab-btn" data-tab="tab-phone">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          3. Dial Our Live Demo Number Live
-        </button>
-      </div>
-
-      <!-- Tab 1: Voice AI Simulator -->
-      <div class="demo-tab-content active" id="tab-voice">
-        <div class="call-simulator-card">
-          <div class="simulator-topbar">
-            <div class="simulator-status">
-              <span class="badge-pulse" style="color:var(--primary);"></span>
-              <span id="simStatusText">Ready • Click to Test</span>
-            </div>
-            <div class="waveform-box">
-              <div class="wave-bar"></div>
-              <div class="wave-bar"></div>
-              <div class="wave-bar"></div>
-              <div class="wave-bar"></div>
-              <div class="wave-bar"></div>
-            </div>
-          </div>
-
-          <div class="simulator-grid">
-            <!-- Left Controls -->
-            <div class="simulator-controls">
-              <div>
-                <div class="scenario-selector-title">Select HVAC Call Scenario:</div>
-                <div class="scenario-list">
-                  <button class="scenario-btn selected" data-scenario="emergency">
-                    <span class="sc-title">🔥 Saturday 6:45 PM AC Failure</span>
-                    <span class="sc-desc">88°F inside, kids at home, quotes $89 fee & books arrival window</span>
-                  </button>
-                  <button class="scenario-btn" data-scenario="replacement">
-                    <span class="sc-title">💰 Cold $12,500 Quote Inquiry</span>
-                    <span class="sc-desc">Homeowner asks about federal 25C tax rebate & 0% APR financing</span>
-                  </button>
-                  <button class="scenario-btn" data-scenario="tuneup">
-                    <span class="sc-title">❄️ Pre-Season $69 AC Tune-Up</span>
-                    <span class="sc-desc">Reactivates quiet shoulder-season customer into calendar</span>
-                  </button>
+              <div class="hero-stats-row">
+                <div class="stat-pill">
+                  <span class="number">$15k–$40k</span>
+                  <span class="label">Monthly Cash Leaking To Voicemail</span>
+                </div>
+                <div class="stat-pill">
+                  <span class="number">15 Seconds</span>
+                  <span class="label">Speed-To-Lead Automated Text-Back</span>
+                </div>
+                <div class="stat-pill">
+                  <span class="number">100% DFY</span>
+                  <span class="label">Syncs With ServiceTitan, Jobber, HCP</span>
                 </div>
               </div>
 
-              <div class="sim-action-area">
-                <button class="btn btn-primary btn-full" id="playSimBtn">
-                  <span>▶ Test Live Voice AI Call (6:45 PM Saturday)</span>
+              <div class="hero-actions">
+                <button class="btn btn-primary btn-lg open-claim-modal" data-sc-magnet="0.25">
+                  Check Territory &amp; Claim Spot →
                 </button>
-                <p style="font-size:0.75rem; color:var(--text-subtle); text-align:center;">
-                  🔊 Uses browser speech audio to synthesize the real conversational exchange.
-                </p>
+                <a href="#demo" class="btn btn-outline btn-lg">
+                  🔊 Hear Live AI Demo In Action
+                </a>
+              </div>
+
+              <div class="hero-guarantee-note">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+                <span><strong>The Double Guarantee:</strong> 5 Recovered Jobs in 30 Days or 100% Refund + Keep All Assets.</span>
               </div>
             </div>
 
-            <!-- Right Live Transcript -->
-            <div class="simulator-transcript-pane">
-              <div class="transcript-header">
-                <span>Real-Time Voice Call Stream</span>
-                <span style="color:var(--primary); font-family:var(--font-mono);">2 RINGS ANSWER</span>
+            <!-- Hero Right Dimensional Visual Card -->
+            <div class="hero-visual-card" data-sc-parallax="0.1" style="box-shadow: var(--sc-e3);">
+              <div class="visual-card-header">
+                <div class="live-indicator">LIVE SYSTEM RUNNING</div>
+                <span class="badge badge-gold">2 Rings Response</span>
               </div>
 
-              <div class="dialogue-thread" id="dialogueThread">
-                <!-- Dialogue will dynamically populate here -->
-                <div class="chat-bubble ai" style="animation:none;">
-                  <span class="speaker-tag">⚡ 24/7 AI Receptionist</span>
-                  <p>Click "Test Live Voice AI Call" on the left to listen to the call triage, emergency slot reservation, and instant FSM dispatch in real-time.</p>
+              <div class="incoming-call-box">
+                <div class="call-timer">AFTER-HOURS CALL DETECTED: 6:48 PM SATURDAY</div>
+                <div class="call-title">Emergency No-Cool Call Triaged</div>
+                <div class="call-desc">
+                  AI answered on Ring 2 • Diagnostic quoted at $89 • Calendar checked for on-call tech window.
                 </div>
               </div>
 
-              <!-- FSM Sync Banner -->
-              <div class="fsm-booking-banner" id="fsmBookingBanner">
-                <div style="font-weight:800; margin-bottom:0.25rem;">✅ DISPATCH BOARD SYNCHRONIZED:</div>
-                <div id="fsmBannerDetails"></div>
+              <div class="hero-dispatch-preview">
+                <div class="dispatch-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m5 12 5 5L20 7"/>
+                  </svg>
+                  JOB RECOVERED &amp; DISPATCHED
+                </div>
+                <div class="dispatch-line"><strong>Customer:</strong> David Miller (412 Maple Ridge Rd)</div>
+                <div class="dispatch-line"><strong>Slot:</strong> Tomorrow 8:00 AM – 10:00 AM</div>
+                <div class="dispatch-line"><strong>Potential Ticket:</strong> $1,200 (Capacitor/Coil Repair)</div>
+                <div class="dispatch-line" style="color:var(--primary); font-weight:700;">Status: Synced to ServiceTitan Board + SMS Sent</div>
+              </div>
+
+              <div class="hero-phone-cta-banner">
+                <div class="title">WANT TO TEST IT RIGHT NOW ON YOUR CELL?</div>
+                <a href="tel:+18884822247" class="phone-number dynamic-demo-phone">
+                  (888) 482-2247
+                </a>
+                <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.25rem;">
+                  Dial live &amp; pretend your furnace or AC is broken!
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Tab 2: Missed Call Text Back Simulator -->
-      <div class="demo-tab-content" id="tab-sms">
-        <div class="sms-simulator-card">
-          <div style="text-align:center; margin-bottom:2rem;">
-            <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">The 15-Second Missed-Call Text-Back (MCTB) Engine</h3>
-            <p style="color:var(--text-muted); font-size:0.95rem; max-width:600px; margin:0 auto;">
-              When a homeowner calls and your line is busy, they click the next contractor on Google within 45 seconds. Watch our AI text them back in 11 seconds to capture the lead.
+    <!-- =========================================================================
+         ACT 2 · TENSION: Pinned Kinetic Sequence (The Silent Cash Bleed)
+         ========================================================================= -->
+    <section data-sc-act="pin" data-sc-span="3.2" data-sc-drift="#0A0E17">
+      <div class="tension-stage" data-sc-stage>
+        <div class="tension-chamber">
+          <!-- Tension Beat 1: The Voicemail Fact -->
+          <div class="tension-line-block" data-sc-cue="0 0.28 0">
+            <span class="badge badge-gold">THE HARD TRUTH</span>
+            <div class="tension-stat-number">70%</div>
+            <h2 class="tension-h2">Of emergency HVAC callers never leave a voicemail.</h2>
+            <p class="tension-body">
+              When an AC compressor locks up at 8:30 PM on a 98°F Friday night, homeowners don't wait until Monday. They hang up in 5 seconds.
             </p>
-            <button class="btn btn-primary btn-sm" id="triggerMctbBtn" style="margin-top:1rem;">
-              ⚡ Simulate Missed Call Right Now
-            </button>
           </div>
 
-          <div class="phone-mockup-wrapper">
-            <div class="phone-mockup-header">
-              <div class="contact-name">Apex Air Heating &amp; Cooling</div>
-              <div class="contact-sub">24/7 Automated Dispatch Line</div>
+          <!-- Tension Beat 2: The Google Rush -->
+          <div class="tension-line-block" data-sc-cue="0.25 0.54">
+            <span class="badge badge-cyan">THE BEHAVIOR</span>
+            <h2 class="tension-h2">They dial the next contractor on Google Maps in 45 seconds.</h2>
+            <p class="tension-body">
+              While your office is closed, your advertising dollars on Google LSA and Yelp are actively donating high-ticket jobs straight to your local competitors.
+            </p>
+          </div>
+
+          <!-- Tension Beat 3: The Financial Drain -->
+          <div class="tension-line-block" data-sc-cue="0.50 0.78">
+            <span class="badge badge-gold">THE BLEED</span>
+            <h2 class="tension-h2">The Real Math of Missed After-Hours Calls:</h2>
+            <div class="tension-loss-cards">
+              <div class="tension-loss-card">
+                <div class="tension-loss-amount">-$450</div>
+                <div class="tension-loss-title">Lost Emergency Diagnostic Call</div>
+              </div>
+              <div class="tension-loss-card">
+                <div class="tension-loss-amount">-$12,800</div>
+                <div class="tension-loss-title">Lost Full System Replacement</div>
+              </div>
             </div>
-            <div class="phone-messages-body" id="mctbPhoneBody">
-              <div class="sms-timer-callout" id="mctbTimerDisplay">Click "Simulate Missed Call" above to watch the 11-second trigger</div>
-              <div class="sms-bubble incoming">
-                Hi! Sorry we missed your call. Are you experiencing an AC or furnace emergency? How can we help?
-                <div class="sms-timestamp">7:14 PM (11s later)</div>
+            <p class="tension-body" style="margin-top:1rem;">
+              The average 5-truck HVAC contractor leaks <strong>$15,000 to $40,000 every single month</strong> into empty voicemails.
+            </p>
+          </div>
+
+          <!-- Tension Beat 4: The Turn -->
+          <div class="tension-line-block" data-sc-cue="0.75">
+            <div class="tension-turn-box">
+              <span class="badge badge-cyan" style="margin-bottom:0.75rem;">THE AUTOPILOT SOLUTION</span>
+              <h2 class="tension-h2" style="font-size: clamp(1.6rem, 2.8vw, 2.4rem); margin-bottom:0.75rem;">
+                Carpero Answers in 2 Rings. Quotes Your Fee. Books The Job In 60 Seconds.
+              </h2>
+              <p class="tension-body" style="font-size:1.05rem;">
+                Zero extra staff. Zero phone system changes. Dispatched straight into ServiceTitan, Housecall Pro, or Jobber.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ACT 3 · THE TURN: Signature Move - Interactive Live Audio & MCTB Simulator
+         ========================================================================= -->
+    <section class="demo-section" id="demo" data-sc-act="flow" data-sc-drift="#080C14">
+      <!-- FSM Trust Bar -->
+      <div class="trust-bar-section" style="padding: 2rem 0; border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+          <div class="trust-title">
+            PLUGS DIRECTLY INTO YOUR EXISTING FIELD SERVICE MANAGEMENT PLATFORM IN 48 HOURS
+          </div>
+          <div class="fsm-logo-grid">
+            <div class="fsm-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              ServiceTitan
+            </div>
+            <div class="fsm-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              Housecall Pro
+            </div>
+            <div class="fsm-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Jobber
+            </div>
+            <div class="fsm-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              FieldEdge
+            </div>
+            <div class="fsm-logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Google Calendar
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Activity Ticker -->
+      <div class="live-activity-bar">
+        <div class="ticker-scroll-content">
+          <div class="ticker-item"><span class="ticker-dot"></span> <strong>Apex Air (Dallas, TX):</strong> Recovered $1,350 Saturday evening capacitor repair (Ring 2)</div>
+          <div class="ticker-item"><span class="ticker-dot"></span> <strong>Valley Climate (Phoenix, AZ):</strong> 11-second text-back booked $450 emergency diagnostic</div>
+          <div class="ticker-item"><span class="ticker-dot"></span> <strong>Lone Star HVAC (Fort Worth, TX):</strong> Revived cold 19-day estimate into $14,200 heat pump replacement</div>
+          <div class="ticker-item"><span class="ticker-dot"></span> <strong>Precision Heating (Atlanta, GA):</strong> 5-Star Google review captured automatically via SMS</div>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 4rem;">
+        <div class="section-header" data-sc-in>
+          <span class="badge badge-cyan">THE SIGNATURE MOVE</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
+            Don't Take Our Word For It. <br>
+            <span class="text-gradient-cyan">Test The AI Live Right Now.</span>
+          </h2>
+          <p class="subtitle">
+            Contractors hate 30-slide PowerPoints. Listen to our Voice AI triage real emergency calls and book appointments in real-time.
+          </p>
+        </div>
+
+        <!-- Demo Tabs -->
+        <div class="demo-tabs-nav" data-sc-in>
+          <button class="demo-tab-btn active" data-tab="tab-voice">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            1. Interactive Voice AI Simulator
+          </button>
+          <button class="demo-tab-btn" data-tab="tab-sms">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            2. 15-Sec Missed-Call Text-Back
+          </button>
+          <button class="demo-tab-btn" data-tab="tab-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            3. Dial Our Live Demo Number
+          </button>
+        </div>
+
+        <!-- Tab 1: Voice AI Simulator -->
+        <div class="demo-tab-content active" id="tab-voice" data-sc-in>
+          <div class="call-simulator-card">
+            <div class="simulator-topbar">
+              <div class="simulator-status">
+                <span class="badge-pulse" style="color:var(--primary);"></span>
+                <span id="simStatusText">Ready • Click to Test</span>
+              </div>
+              <div class="waveform-box">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+              </div>
+            </div>
+
+            <div class="simulator-grid">
+              <!-- Left Controls -->
+              <div class="simulator-controls">
+                <div>
+                  <div class="scenario-selector-title">Select HVAC Call Scenario:</div>
+                  <div class="scenario-list">
+                    <button class="scenario-btn selected" data-scenario="emergency">
+                      <span class="sc-title">🔥 Saturday 6:45 PM AC Failure</span>
+                      <span class="sc-desc">88°F inside, quotes $89 diagnostic &amp; books window</span>
+                    </button>
+                    <button class="scenario-btn" data-scenario="replacement">
+                      <span class="sc-title">💰 Cold $12,500 Quote Inquiry</span>
+                      <span class="sc-desc">Homeowner asks about federal 25C tax rebate &amp; 0% APR</span>
+                    </button>
+                    <button class="scenario-btn" data-scenario="tuneup">
+                      <span class="sc-title">❄️ Pre-Season $69 AC Tune-Up</span>
+                      <span class="sc-desc">Reactivates quiet shoulder-season customer into calendar</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="sim-action-area">
+                  <button class="btn btn-primary btn-full" id="playSimBtn" data-sc-magnet="0.2">
+                    <span>▶ Test Live Voice AI Call (6:45 PM Saturday)</span>
+                  </button>
+                  <p style="font-size:0.75rem; color:var(--text-subtle); text-align:center;">
+                    🔊 Uses browser speech synthesis to simulate the real voice exchange.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right Live Transcript -->
+              <div class="simulator-transcript-pane">
+                <div class="transcript-header">
+                  <span>Real-Time Voice Call Stream</span>
+                  <span style="color:var(--primary); font-family:var(--font-mono);">2 RINGS ANSWER</span>
+                </div>
+
+                <div class="dialogue-thread" id="dialogueThread">
+                  <div class="chat-bubble ai" style="animation:none;">
+                    <span class="speaker-tag">⚡ 24/7 AI Receptionist</span>
+                    <p>Click "Test Live Voice AI Call" on the left to listen to the call triage, emergency slot reservation, and instant FSM dispatch in real-time.</p>
+                  </div>
+                </div>
+
+                <!-- FSM Sync Banner -->
+                <div class="fsm-booking-banner" id="fsmBookingBanner">
+                  <div style="font-weight:800; margin-bottom:0.25rem;">✅ DISPATCH BOARD SYNCHRONIZED:</div>
+                  <div id="fsmBannerDetails"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Missed Call Text Back Simulator -->
+        <div class="demo-tab-content" id="tab-sms">
+          <div class="sms-simulator-card">
+            <div style="text-align:center; margin-bottom:2rem;">
+              <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">The 15-Second Missed-Call Text-Back (MCTB) Engine</h3>
+              <p style="color:var(--text-muted); font-size:0.95rem; max-width:600px; margin:0 auto;">
+                When a homeowner calls and your line is busy, they click the next contractor on Google within 45 seconds. Watch our AI text them back in 11 seconds to capture the lead.
+              </p>
+              <button class="btn btn-primary btn-sm" id="triggerMctbBtn" style="margin-top:1rem;">
+                ⚡ Simulate Missed Call Right Now
+              </button>
+            </div>
+
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup-header">
+                <div class="contact-name">Apex Air Heating &amp; Cooling</div>
+                <div class="contact-sub">24/7 Automated Dispatch Line</div>
+              </div>
+              <div class="phone-messages-body" id="mctbPhoneBody">
+                <div class="sms-timer-callout" id="mctbTimerDisplay">Click "Simulate Missed Call" above to watch the 11-second trigger</div>
+                <div class="sms-bubble incoming">
+                  Hi! Sorry we missed your call. Are you experiencing an AC or furnace emergency? How can we help?
+                  <div class="sms-timestamp">7:14 PM (11s later)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Dial Our Live Phone Number -->
+        <div class="demo-tab-content" id="tab-phone">
+          <div class="call-simulator-card" style="padding: 3.5rem 2rem; text-align: center;">
+            <span class="badge badge-gold" style="margin-bottom:1rem;">DIAL FROM YOUR OWN CELL RIGHT NOW</span>
+            <h3 style="font-size:2.2rem; margin-bottom:1rem;">
+              Test Our Live Voice AI Phone Number
+            </h3>
+            <p style="color:var(--text-muted); font-size:1.1rem; max-width:620px; margin:0 auto 2rem;">
+              Pull out your cell phone right now. Call the number below. Pretend your furnace is blowing cold air and you need an appointment tomorrow morning.
+            </p>
+
+            <a href="tel:+18884822247" class="btn btn-gold btn-lg dynamic-demo-phone" style="font-size:1.6rem; padding:1.25rem 2.75rem; letter-spacing:0.04em;">
+              📞 (888) 482-2247
+            </a>
+
+            <div style="margin-top:2.5rem; display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; max-width:760px; margin-left:auto; margin-right:auto; text-align:left;">
+              <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md);">
+                <strong style="color:#FFFFFF; display:block; margin-bottom:0.25rem;">1. Dial The Number</strong>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Hear how natural and ultra-responsive the AI voice sounds in 2 rings.</span>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md);">
+                <strong style="color:#FFFFFF; display:block; margin-bottom:0.25rem;">2. Give An Address</strong>
+                <span style="font-size:0.8rem; color:var(--text-muted);">State your problem (e.g., AC blowing hot air) and choose a time window.</span>
+              </div>
+              <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md);">
+                <strong style="color:#FFFFFF; display:block; margin-bottom:0.25rem;">3. Watch Your SMS</strong>
+                <span style="font-size:0.8rem; color:var(--text-muted);">Receive an instant booking confirmation text on your phone within 10 seconds.</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Tab 3: Dial Our Live Phone Number -->
-      <div class="demo-tab-content" id="tab-phone">
-        <div class="call-simulator-card" style="padding: 3.5rem 2rem; text-align: center;">
-          <span class="badge badge-gold" style="margin-bottom:1rem;">DIAL FROM YOUR OWN CELL RIGHT NOW</span>
-          <h3 style="font-size:2.2rem; margin-bottom:1rem;">
-            Test Our Live Twilio / Vapi AI Phone Number
-          </h3>
-          <p style="color:var(--text-muted); font-size:1.1rem; max-width:620px; margin:0 auto 2rem;">
-            Pull out your cell phone right now. Call the number below. Pretend your furnace is blowing cold air and you need an appointment tomorrow morning.
+    <!-- =========================================================================
+         ACT 4 · SUBSTANCE: Interactive Revenue Leak Calculator
+         ========================================================================= -->
+    <section class="calculator-section" id="calculator" data-sc-act="flow" data-sc-drift="#0B101D">
+      <div class="container">
+        <div class="section-header" data-sc-in>
+          <span class="badge badge-cyan">INTERACTIVE AUDIT</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
+            How Much Cash Is Your HVAC Shop <br>
+            <span class="text-gradient-cyan">Leaking Right Now?</span>
+          </h2>
+          <p class="subtitle">
+            Adjust the sliders below to your shop's rough numbers. Watch the math prove why letting calls go to voicemail is costing you a small fortune.
           </p>
-
-          <a href="tel:+18884822247" class="btn btn-gold btn-lg dynamic-demo-phone" style="font-size:1.6rem; padding:1.25rem 2.75rem; letter-spacing:0.04em;">
-            📞 (888) 482-2247
-          </a>
-
-          <div style="margin-top:2.5rem; display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; max-width:760px; margin-left:auto; margin-right:auto; text-align:left;">
-            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md);">
-              <strong style="color:#FFFFFF; display:block; margin-bottom:0.25rem;">1. Dial The Number</strong>
-              <span style="font-size:0.8rem; color:var(--text-muted);">Hear how natural and ultra-responsive the AI voice sounds in 2 rings.</span>
-            </div>
-            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md);">
-              <strong style="color:#FFFFFF; display:block; margin-bottom:0.25rem;">2. Give An Address</strong>
-              <span style="font-size:0.8rem; color:var(--text-muted);">State your problem (e.g., AC blowing hot air) and choose a time window.</span>
-            </div>
-            <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-subtle); padding:1rem; border-radius:var(--radius-md);">
-              <strong style="color:#FFFFFF; display:block; margin-bottom:0.25rem;">3. Watch Your SMS</strong>
-              <span style="font-size:0.8rem; color:var(--text-muted);">Receive an instant booking confirmation text on your phone within 10 seconds.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- Interactive ROI & Revenue Recovery Calculator -->
-  <section class="calculator-section" id="calculator">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-cyan">INTERACTIVE AUDIT</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
-          How Much Cash Is Your HVAC Shop <br>
-          <span class="text-gradient-cyan">Leaking Right Now?</span>
-        </h2>
-        <p class="subtitle">
-          Adjust the sliders below to your shop's rough numbers. Watch the math prove why letting calls go to voicemail is costing you a small fortune.
-        </p>
-      </div>
-
-      <div class="calculator-card">
-        <!-- Inputs -->
-        <div class="calc-inputs-col">
-          <div class="slider-group">
-            <div class="slider-header">
-              <span class="slider-label">Monthly Inbound Call Volume:</span>
-              <span class="slider-val-badge" id="calcCallsVal">500 calls/mo</span>
-            </div>
-            <input type="range" id="calcCallsSlider" min="100" max="2000" step="50" value="500">
-            <span style="font-size:0.75rem; color:var(--text-subtle);">From Google LSA, website, trucks, and repeat customers</span>
-          </div>
-
-          <div class="slider-group">
-            <div class="slider-header">
-              <span class="slider-label">Estimated Missed Call Rate (%):</span>
-              <span class="slider-val-badge" id="calcMissedRateVal">25%</span>
-            </div>
-            <input type="range" id="calcMissedRateSlider" min="10" max="50" step="1" value="25">
-            <span style="font-size:0.75rem; color:var(--text-subtle);">Industry average: 22%–32% during rush hours, weekends &amp; after 5 PM</span>
-          </div>
-
-          <div class="slider-group">
-            <div class="slider-header">
-              <span class="slider-label">Open / Unclosed System Replacement Quotes / Month:</span>
-              <span class="slider-val-badge" id="calcQuotesVal">12 quotes/mo</span>
-            </div>
-            <input type="range" id="calcQuotesSlider" min="2" max="40" step="1" value="12">
-            <span style="font-size:0.75rem; color:var(--text-subtle);">$8,000–$16,000 proposals sent where the homeowner "wants to think about it"</span>
-          </div>
         </div>
 
-        <!-- Dynamic Output -->
-        <div class="calc-results-col">
-          <div class="calc-metric-box">
-            <div class="calc-metric-label">Estimated Monthly Revenue Leaking to Competitors:</div>
-            <div class="calc-metric-value danger" id="calcLostMonthlyVal">$38,400</div>
-            <span style="font-size:0.8rem; color:#94A3B8;">Cash slipping into other local shops' pockets</span>
-          </div>
+        <div class="calculator-card" data-sc-in>
+          <!-- Inputs -->
+          <div class="calc-inputs-col">
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-label">Monthly Inbound Call Volume:</span>
+                <span class="slider-val-badge" id="calcCallsVal">500 calls/mo</span>
+              </div>
+              <input type="range" id="calcCallsSlider" min="100" max="2000" step="50" value="500">
+              <span style="font-size:0.75rem; color:var(--text-subtle);">From Google LSA, website, trucks, and repeat customers</span>
+            </div>
 
-          <div class="calc-metric-box">
-            <div class="calc-metric-label">Projected 30-Day Recovery (Just 5–15 Jobs):</div>
-            <div class="calc-metric-value success" id="calcRecoveredMonthlyVal">$21,500</div>
-            <span style="font-size:0.8rem; color:#A7F3D0;">Direct cash returned to your bank account</span>
-          </div>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-label">Estimated Missed Call Rate (%):</span>
+                <span class="slider-val-badge" id="calcMissedRateVal">25%</span>
+              </div>
+              <input type="range" id="calcMissedRateSlider" min="10" max="50" step="1" value="25">
+              <span style="font-size:0.75rem; color:var(--text-subtle);">Industry average: 22%–32% during rush hours, weekends &amp; after 5 PM</span>
+            </div>
 
-          <div class="calc-metric-box">
-            <div class="calc-metric-label">Net Profit After Founding Partner Retainer ($497/mo):</div>
-            <div class="calc-metric-value cyan" id="calcNetProfitVal">+$21,003/mo</div>
-            <div class="roi-badge-line">
-              <span style="font-size:0.85rem; font-weight:700; color:#ECFDF5;">Guaranteed Performance ROI:</span>
-              <span style="font-weight:900; color:var(--success); font-size:1.15rem;" id="calcRoiMultiplier">4,226% ROI</span>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span class="slider-label">Open / Unclosed System Replacement Quotes / Month:</span>
+                <span class="slider-val-badge" id="calcQuotesVal">12 quotes/mo</span>
+              </div>
+              <input type="range" id="calcQuotesSlider" min="2" max="40" step="1" value="12">
+              <span style="font-size:0.75rem; color:var(--text-subtle);">$8,000–$16,000 proposals sent where the homeowner "wants to think about it"</span>
             </div>
           </div>
 
-          <button class="btn btn-primary btn-full open-claim-modal">
-            Recover This Revenue In 48 Hours →
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Deliverable Stack Section ($20,400 Value) -->
-  <section class="stack-section" id="deliverables">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-gold">THE IRRESISTIBLE DELIVERABLE STACK</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
-          Everything Deployed For You In 48 Hours. <br>
-          <span class="text-gradient-gold">Zero Tech Headaches.</span>
-        </h2>
-        <p class="subtitle">
-          We stack the components to build an unshakeable revenue moat for your HVAC business.
-        </p>
-      </div>
-
-      <div class="stack-grid">
-        <!-- Item 1 -->
-        <div class="stack-card">
-          <div class="stack-number-box">1</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">24/7 Inbound Voice AI Receptionist &amp; Emergency Triage</h3>
-            <ul class="stack-info-bullets">
-              <li>Answers in 2 rings, 365 days a year (never takes sick days or sleeps)</li>
-              <li>Differentiates true emergencies (no AC/heat with seniors/infants) vs. routine callbacks</li>
-              <li>Quotes your exact diagnostic dispatch fee &amp; books directly into your calendar</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount">$5,000</span>
-            <span class="stack-value-sub">Stated Value</span>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="stack-card">
-          <div class="stack-number-box">2</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">15-Second Missed-Call Text-Back (MCTB) System</h3>
-            <ul class="stack-info-bullets">
-              <li>Automatically texts missed callers before they dial the next contractor on Google Maps</li>
-              <li>AI handles two-way natural SMS conversation to qualify the problem &amp; schedule</li>
-              <li>Prevents 70%+ of missed callers from ever hiring your local competitors</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount">$2,500</span>
-            <span class="stack-value-sub">Stated Value</span>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="stack-card">
-          <div class="stack-number-box">3</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">The "Dead Estimate Reviver" Machine</h3>
-            <ul class="stack-info-bullets">
-              <li>7-touch automated multi-channel sequence for open $8,000–$16,000 system replacement quotes</li>
-              <li>Educates undecided homeowners on 0% financing, utility rebates, SEER2 &amp; manufacturer warranties</li>
-              <li>Turns 2 to 5 forgotten proposals every single month into closed replacements</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount">$4,500</span>
-            <span class="stack-value-sub">Stated Value</span>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="stack-card">
-          <div class="stack-number-box">4</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">Shoulder-Season Database Cash-Machine</h3>
-            <ul class="stack-info-bullets">
-              <li>1-click reactivation campaigns deployed in slow months (April &amp; October)</li>
-              <li>Books 30–60 tune-ups &amp; maintenance agreements to keep technicians billable year-round</li>
-              <li>Eliminates payroll stress when the weather is mild and the phones stop ringing</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount">$3,000</span>
-            <span class="stack-value-sub">Stated Value</span>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="stack-card">
-          <div class="stack-number-box">5</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">5-Star Google Review &amp; Reputation Shield</h3>
-            <ul class="stack-info-bullets">
-              <li>Automated post-job review request via SMS right after the technician marks job complete</li>
-              <li>Routes 5-star reviews directly to your Google Business Profile</li>
-              <li>Intercepts unhappy customers to your private manager line before they write a 1-star review</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount">$1,500</span>
-            <span class="stack-value-sub">Stated Value</span>
-          </div>
-        </div>
-
-        <!-- Bonus 1 -->
-        <div class="stack-card bonus">
-          <div class="stack-number-box">🎁</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">BONUS 1: Zero-Friction FSM Webhook Integration</h3>
-            <ul class="stack-info-bullets">
-              <li>Custom API bridge for ServiceTitan, Housecall Pro, Jobber, FieldEdge, or Google Calendar</li>
-              <li>No duplicate data entry; appointments appear right on your active dispatch board</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount" style="color:#FBBF24;">$1,500</span>
-            <span class="stack-value-sub">Bonus Value</span>
-          </div>
-        </div>
-
-        <!-- Bonus 2 -->
-        <div class="stack-card bonus">
-          <div class="stack-number-box">🎁</div>
-          <div class="stack-info-col">
-            <h3 class="stack-info-title">BONUS 2: 12 Months of Custom Voice AI &amp; Script Tuning</h3>
-            <ul class="stack-info-bullets">
-              <li>Continuous prompt engineering, seasonal price changes, and emergency protocol updates</li>
-              <li>Monthly performance reporting on recovered calls, booked revenue, and closed estimates</li>
-            </ul>
-          </div>
-          <div class="stack-value-tag">
-            <span class="stack-value-amount" style="color:#FBBF24;">$2,400</span>
-            <span class="stack-value-sub">Bonus Value</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Total Realistic Value Card -->
-      <div class="stack-total-summary-card">
-        <div>
-          <div class="stack-total-label">TOTAL REALISTIC DELIVERABLE VALUE:</div>
-          <div class="stack-total-sub">Includes 5 core recovery engines + 2 integration bonuses</div>
-        </div>
-        <div>
-          <div class="stack-total-price">$20,400</div>
-          <div style="font-size:0.8rem; color:#A7F3D0; text-align:right;">
-            Yours for a fraction of that under our Founding Partner Offer
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Territory Exclusivity & Scarcity Checker -->
-  <section class="territory-section" id="territory">
-    <div class="container">
-      <div class="territory-card">
-        <div class="territory-notice-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          STRICT POLICY: MAXIMUM 2 HVAC CONTRACTORS PER METRO SERVICE AREA
-        </div>
-
-        <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-bottom:1rem;">
-          We Cannot Give Your Direct Competitors <br>
-          <span class="text-gradient-cyan">The Exact Same Advantage.</span>
-        </h2>
-
-        <p style="color:var(--text-muted); font-size:1.05rem; max-width:680px; margin:0 auto 2.25rem;">
-          To protect your competitive speed-to-lead advantage on Google Maps, we strictly limit deployment to 2 shops per metropolitan area (e.g., Dallas North, Phoenix East Valley, Metro Atlanta). Once filled, that territory is locked.
-        </p>
-
-        <form class="territory-input-form" id="territoryCheckForm">
-          <input type="text" class="territory-input" id="territoryInput" placeholder="Enter Your Zip Code or Metro (e.g. 75001 or Dallas, TX)" required>
-          <button type="submit" class="btn btn-primary">
-            Check Availability →
-          </button>
-        </form>
-
-        <div id="territoryResultDisplay" class="territory-result-display"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Section (Founding Partner vs Standard) -->
-  <section class="pricing-section" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-gold">TRANSPARENT FOUNDING PARTNER PRICING</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
-          Priced So One Single AC Repair <br>
-          <span class="text-gradient-gold">Pays For The Entire Service.</span>
-        </h2>
-        <p class="subtitle">
-          No enterprise $15,000 annual contracts. No cheap freelancer templates. Honest founding pricing locked in for life.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Founding Partner Tier (Featured) -->
-        <div class="pricing-card featured">
-          <div class="featured-top-badge">Founding Partner Tier (First 10 Shops Only)</div>
-          
-          <div>
-            <div class="pricing-tier-name">The Founding Partner License</div>
-            <div class="pricing-tier-desc">Complete 48-Hour DFY Installation, FSM Integration, and 24/7 Voice AI Engine.</div>
-
-            <div class="spots-remaining-tracker">
-              <span>🔥 Founding Spots Status:</span>
-              <span class="dynamic-spots-left" style="color:#FFFFFF; font-weight:900;">2 of 10 Spots Left</span>
+          <!-- Dynamic Output -->
+          <div class="calc-results-col">
+            <div class="calc-metric-box">
+              <div class="calc-metric-label">Estimated Monthly Revenue Leaking to Competitors:</div>
+              <div class="calc-metric-value danger" id="calcLostMonthlyVal">$38,400</div>
+              <span style="font-size:0.8rem; color:#94A3B8;">Cash slipping into other local shops' pockets</span>
             </div>
 
-            <div class="pricing-price-display">
-              <div class="pricing-main-price dynamic-founding-monthly">$497<span>/month</span></div>
-              <div class="pricing-setup-line">
-                Setup: <span class="dynamic-founding-setup">$997</span> (or $0 upfront, billed after 5th job recovered)
+            <div class="calc-metric-box">
+              <div class="calc-metric-label">Projected 30-Day Recovery (Just 5–15 Jobs):</div>
+              <div class="calc-metric-value success" id="calcRecoveredMonthlyVal">$21,500</div>
+              <span style="font-size:0.8rem; color:#A7F3D0;">Direct cash returned to your bank account</span>
+            </div>
+
+            <div class="calc-metric-box">
+              <div class="calc-metric-label">Net Profit After Founding Partner Retainer ($497/mo):</div>
+              <div class="calc-metric-value cyan" id="calcNetProfitVal">+$21,003/mo</div>
+              <div class="roi-badge-line">
+                <span style="font-size:0.85rem; font-weight:700; color:#ECFDF5;">Guaranteed Performance ROI:</span>
+                <span style="font-weight:900; color:var(--success); font-size:1.15rem;" id="calcRoiMultiplier">4,226% ROI</span>
               </div>
             </div>
 
-            <ul class="pricing-features-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span><strong>5 Recovered Jobs in 30 Days Guarantee</strong> (Or 100% refund)</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span><strong>$497/mo Locked-In For Life</strong> (Never increases)</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span><strong>Month-to-Month Agreement</strong> (Cancel anytime with 30 days notice)</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>24/7 Inbound Voice AI Receptionist (2-Ring Answer)</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>15-Second Missed-Call Text-Back (MCTB) System</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>7-Touch "Dead Estimate Reviver" Machine</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>Full Webhook Sync with ServiceTitan / Housecall Pro / Jobber</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <button class="btn btn-primary btn-full open-claim-modal">
-              Claim Founding Partner Spot ($497/mo Locked) →
-            </button>
-            <div style="font-size:0.75rem; color:#94A3B8; text-align:center; margin-top:0.75rem;">
-              One recovered AC repair ($350) pays 70% of the retainer. One replacement ($10,000) pays for the whole year.
-            </div>
-          </div>
-        </div>
-
-        <!-- Standard Future Tier -->
-        <div class="pricing-card standard">
-          <div>
-            <div class="pricing-tier-name">Standard Future License</div>
-            <div class="pricing-tier-desc">Scheduled standard commercial price applied starting with Client #11.</div>
-
-            <div class="pricing-price-display" style="margin-top:1.5rem;">
-              <div class="pricing-main-price">$997<span>/month</span></div>
-              <div class="pricing-setup-line" style="color:var(--text-muted);">
-                Setup &amp; Integration Fee: $2,497
-              </div>
-            </div>
-
-            <ul class="pricing-features-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>Standard 30-Day Guarantee</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span><strong>6-Month Minimum Commitment</strong></span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>24/7 Inbound Voice AI Receptionist</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>15-Second Missed-Call Text-Back Engine</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
-                <span>Dead Estimate Reviver Sequence</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <button class="btn btn-outline btn-full open-claim-modal">
-              Join Waitlist for Client #11+
+            <button class="btn btn-primary btn-full open-claim-modal" data-sc-magnet="0.2">
+              Recover This Revenue In 48 Hours →
             </button>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 48-Hour Zero Friction Deployment Roadmap -->
-  <section class="roadmap-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-cyan">48-HOUR ONBOARDING</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
-          How We Go Live In 2 Business Days <br>
-          <span class="text-gradient-cyan">Without Disturbing Your Office Staff</span>
-        </h2>
-        <p class="subtitle">
-          We take care of the entire build, script engineering, and integration. You don't learn any new software.
-        </p>
-      </div>
-
-      <div class="roadmap-timeline-grid">
-        <div class="timeline-step-card">
-          <span class="step-hour-badge">HOURS 0 – 12</span>
-          <h3 class="step-card-title">1. The 15-Minute Intake</h3>
-          <p class="step-card-desc">
-            We collect your diagnostic fee, dispatch calendar link, emergency guidelines, and FSM webhook keys. That's literally all we need from you.
+    <!-- =========================================================================
+         ACT 5 · RANGE: The 48-Hour Rapid Installation Stack
+         ========================================================================= -->
+    <section class="stack-section" id="deliverables" data-sc-act="flow" data-sc-drift="#080C16">
+      <div class="container">
+        <div class="section-header" data-sc-in>
+          <span class="badge badge-gold">THE IRRESISTIBLE DELIVERABLE STACK</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
+            Everything Deployed For You In 48 Hours. <br>
+            <span class="text-gradient-gold">Zero Tech Headaches.</span>
+          </h2>
+          <p class="subtitle">
+            We stack the components to build an unshakeable revenue moat for your HVAC business.
           </p>
         </div>
 
-        <div class="timeline-step-card">
-          <span class="step-hour-badge">HOURS 12 – 24</span>
-          <h3 class="step-card-title">2. Voice AI &amp; Script Tuning</h3>
-          <p class="step-card-desc">
-            We program the voice agent with your shop's exact tone, brand policies, emergency triage rules, and booking availability logic.
+        <div class="stack-grid" data-sc-in data-sc-stagger="50">
+          <!-- Item 1 -->
+          <div class="stack-card">
+            <div class="stack-number-box">1</div>
+            <div class="stack-info-col">
+              <h3 class="stack-info-title">24/7 Inbound Voice AI Receptionist &amp; Emergency Triage</h3>
+              <ul class="stack-info-bullets">
+                <li>Answers in 2 rings, 365 days a year (never takes sick days or sleeps)</li>
+                <li>Differentiates true emergencies (no AC/heat) vs. routine callbacks</li>
+                <li>Quotes your exact diagnostic dispatch fee &amp; books directly into your calendar</li>
+              </ul>
+            </div>
+            <div class="stack-value-tag">
+              <span class="stack-value-amount">$5,000</span>
+              <span class="stack-value-sub">Stated Value</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="stack-card">
+            <div class="stack-number-box">2</div>
+            <div class="stack-info-col">
+              <h3 class="stack-info-title">15-Second Missed-Call Text-Back (MCTB) System</h3>
+              <ul class="stack-info-bullets">
+                <li>Automatically texts missed callers before they dial the next contractor on Google Maps</li>
+                <li>AI handles two-way natural SMS conversation to qualify the problem &amp; schedule</li>
+                <li>Prevents 70%+ of missed callers from ever hiring your local competitors</li>
+              </ul>
+            </div>
+            <div class="stack-value-tag">
+              <span class="stack-value-amount">$2,500</span>
+              <span class="stack-value-sub">Stated Value</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="stack-card">
+            <div class="stack-number-box">3</div>
+            <div class="stack-info-col">
+              <h3 class="stack-info-title">The "Dead Estimate Reviver" Machine</h3>
+              <ul class="stack-info-bullets">
+                <li>7-touch automated multi-channel sequence for open $8,000–$16,000 system replacement quotes</li>
+                <li>Educates undecided homeowners on 0% financing, utility rebates, SEER2 &amp; warranties</li>
+                <li>Turns 2 to 5 forgotten proposals every single month into closed replacements</li>
+              </ul>
+            </div>
+            <div class="stack-value-tag">
+              <span class="stack-value-amount">$4,500</span>
+              <span class="stack-value-sub">Stated Value</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="stack-card">
+            <div class="stack-number-box">4</div>
+            <div class="stack-info-col">
+              <h3 class="stack-info-title">Shoulder-Season Database Cash-Machine</h3>
+              <ul class="stack-info-bullets">
+                <li>1-click reactivation campaigns deployed in slow months (April &amp; October)</li>
+                <li>Books 30–60 tune-ups &amp; maintenance agreements to keep technicians billable</li>
+                <li>Eliminates payroll stress when the weather is mild and phones slow down</li>
+              </ul>
+            </div>
+            <div class="stack-value-tag">
+              <span class="stack-value-amount">$3,000</span>
+              <span class="stack-value-sub">Stated Value</span>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="stack-card">
+            <div class="stack-number-box">5</div>
+            <div class="stack-info-col">
+              <h3 class="stack-info-title">5-Star Google Review &amp; Reputation Shield</h3>
+              <ul class="stack-info-bullets">
+                <li>Automated post-job review request via SMS right after the technician marks job complete</li>
+                <li>Routes 5-star reviews directly to your Google Business Profile</li>
+                <li>Intercepts unhappy customers to your private manager line before they write a 1-star review</li>
+              </ul>
+            </div>
+            <div class="stack-value-tag">
+              <span class="stack-value-amount">$1,500</span>
+              <span class="stack-value-sub">Stated Value</span>
+            </div>
+          </div>
+
+          <!-- Bonus 1 & 2 -->
+          <div class="stack-card bonus">
+            <div class="stack-number-box">🎁</div>
+            <div class="stack-info-col">
+              <h3 class="stack-info-title">BONUS: Zero-Friction FSM Webhook Integration &amp; 12 Months Tuning</h3>
+              <ul class="stack-info-bullets">
+                <li>Custom API bridge for ServiceTitan, Housecall Pro, Jobber, FieldEdge, or Google Calendar</li>
+                <li>Continuous prompt engineering, seasonal price changes, and emergency protocol updates</li>
+              </ul>
+            </div>
+            <div class="stack-value-tag">
+              <span class="stack-value-amount" style="color:#FBBF24;">$3,900</span>
+              <span class="stack-value-sub">Bonus Value</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Realistic Value Card -->
+        <div class="stack-total-summary-card" data-sc-in>
+          <div>
+            <div class="stack-total-label">TOTAL REALISTIC DELIVERABLE VALUE:</div>
+            <div class="stack-total-sub">Includes 5 core recovery engines + complete integration bonuses</div>
+          </div>
+          <div>
+            <div class="stack-total-price">$20,400</div>
+            <div style="font-size:0.8rem; color:#A7F3D0; text-align:right;">
+              Yours for a fraction of that under our Founding Partner Offer
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing" data-sc-act="flow" data-sc-drift="#0A0D15">
+      <div class="container">
+        <div class="section-header" data-sc-in>
+          <span class="badge badge-gold">TRANSPARENT FOUNDING PARTNER PRICING</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
+            Priced So One Single AC Repair <br>
+            <span class="text-gradient-gold">Pays For The Entire Service.</span>
+          </h2>
+          <p class="subtitle">
+            No enterprise $15,000 annual contracts. No cheap freelancer templates. Honest founding pricing locked in for life.
           </p>
         </div>
 
-        <div class="timeline-step-card">
-          <span class="step-hour-badge">HOURS 24 – 48</span>
-          <h3 class="step-card-title">3. The Live Dial Test</h3>
-          <p class="step-card-desc">
-            We call you and have you test the line live from your cell phone. Once you confirm it sounds incredible, call forwarding is switched on.
+        <div class="pricing-grid" data-sc-in>
+          <!-- Founding Partner Tier (Featured) -->
+          <div class="pricing-card featured" style="box-shadow: var(--sc-e3);">
+            <div class="featured-top-badge">Founding Partner Tier (First 10 Shops Only)</div>
+            
+            <div>
+              <div class="pricing-tier-name">The Founding Partner License</div>
+              <div class="pricing-tier-desc">Complete 48-Hour DFY Installation, FSM Integration, and 24/7 Voice AI Engine.</div>
+
+              <div class="spots-remaining-tracker">
+                <span>🔥 Founding Spots Status:</span>
+                <span class="dynamic-spots-left" style="color:#FFFFFF; font-weight:900;">2 of 10 Spots Left</span>
+              </div>
+
+              <div class="pricing-price-display">
+                <div class="pricing-main-price dynamic-founding-monthly">$497<span>/month</span></div>
+                <div class="pricing-setup-line">
+                  Setup: <span class="dynamic-founding-setup">$997</span> (or $0 upfront, billed after 5th job recovered)
+                </div>
+              </div>
+
+              <ul class="pricing-features-list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span><strong>5 Recovered Jobs in 30 Days Guarantee</strong> (Or 100% refund)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span><strong>$497/mo Locked-In For Life</strong> (Never increases)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span><strong>Month-to-Month Agreement</strong> (Cancel anytime with 30 days notice)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>24/7 Inbound Voice AI Receptionist (2-Ring Answer)</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>15-Second Missed-Call Text-Back (MCTB) System</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>7-Touch "Dead Estimate Reviver" Machine</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>Full Webhook Sync with ServiceTitan / Housecall Pro / Jobber</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button class="btn btn-primary btn-full open-claim-modal" data-sc-magnet="0.25">
+                Claim Founding Partner Spot ($497/mo Locked) →
+              </button>
+              <div style="font-size:0.75rem; color:#94A3B8; text-align:center; margin-top:0.75rem;">
+                One recovered AC repair ($350) pays 70% of the retainer. One replacement ($10,000) pays for the whole year.
+              </div>
+            </div>
+          </div>
+
+          <!-- Standard Future Tier -->
+          <div class="pricing-card standard">
+            <div>
+              <div class="pricing-tier-name">Standard Future License</div>
+              <div class="pricing-tier-desc">Scheduled standard commercial price applied starting with Client #11.</div>
+
+              <div class="pricing-price-display" style="margin-top:1.5rem;">
+                <div class="pricing-main-price">$997<span>/month</span></div>
+                <div class="pricing-setup-line" style="color:var(--text-muted);">
+                  Setup &amp; Integration Fee: $2,497
+                </div>
+              </div>
+
+              <ul class="pricing-features-list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>Standard 30-Day Guarantee</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span><strong>6-Month Minimum Commitment</strong></span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>24/7 Inbound Voice AI Receptionist</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+                  <span>15-Second Missed-Call Text-Back Engine</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <button class="btn btn-outline btn-full open-claim-modal">
+                Join Waitlist for Client #11+
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ACT 6 · COMMITMENT & SCARCITY: Pinned Closing Stage
+         ========================================================================= -->
+    <section id="territory" data-sc-act="pin" data-sc-span="1.6" data-sc-drift="#06080C">
+      <div class="commitment-stage" data-sc-stage>
+        <div class="commitment-container">
+          <div class="territory-card" style="box-shadow: var(--sc-e3);">
+            <div class="territory-notice-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              STRICT POLICY: MAXIMUM 2 HVAC CONTRACTORS PER METRO SERVICE AREA
+            </div>
+
+            <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-bottom:1rem;" data-sc-kinetic="lines">
+              We Cannot Give Your Direct Competitors <br>
+              <span class="text-gradient-cyan">The Exact Same Advantage.</span>
+            </h2>
+
+            <p style="color:var(--text-muted); font-size:1.05rem; max-width:680px; margin:0 auto 2.25rem;">
+              To protect your competitive speed-to-lead advantage on Google Maps, we strictly limit deployment to 2 shops per metropolitan area. Once filled, that territory is locked.
+            </p>
+
+            <form class="territory-input-form" id="territoryCheckForm">
+              <input type="text" class="territory-input" id="territoryInput" placeholder="Enter Your Zip Code or Metro (e.g. 75001 or Dallas, TX)" required>
+              <button type="submit" class="btn btn-primary" data-sc-magnet="0.25">
+                Check Availability &amp; Claim →
+              </button>
+            </form>
+
+            <div id="territoryResultDisplay" class="territory-result-display"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq" data-sc-act="flow" data-sc-drift="#07090E">
+      <div class="container">
+        <div class="section-header" data-sc-in>
+          <span class="badge badge-gold">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
+            Straight Answers For HVAC Owners
+          </h2>
+        </div>
+
+        <div class="faq-container" data-sc-in>
+          <div class="faq-item active">
+            <button class="faq-question-btn">
+              <span>Does this replace my office manager or receptionist?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              No! It acts as a supercharger for your team. During business hours, your team answers calls as normal. The Autopilot handles overflow during busy peaks (when 3 calls hit at once) and takes over nights, weekends, and holidays so your staff never has to suffer on-call burnout.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>Does the AI sound like a clunky robotic phone tree?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Not at all. We use ultra-low latency conversational voice engines (sub-600ms response time) with natural human inflections, breathing pauses, and contextual understanding. Most callers assume they are speaking to a friendly, highly trained local dispatcher. You can hear it live right now by dialing (888) 482-2247.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>How does it integrate with ServiceTitan / Housecall Pro / Jobber?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              We utilize native webhooks and calendar APIs. When the AI receptionist or SMS engine books a diagnostic or callback, it creates a new customer ticket and drops the job straight into your dispatch board with all caller notes, address details, and problem summary. Your dispatchers change zero habits.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>What happens if an emergency occurs at 2:00 AM?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              The AI is calibrated to differentiate routine inquiries (e.g. "I want an estimate next Tuesday") from urgent emergencies (e.g. "Water leaking through ceiling from air handler" or "Elderly parent with no heat in 20-degree weather"). For urgent emergencies, it can immediately route to your on-call technician or book the first priority 7:00 AM emergency slot.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn">
+              <span>Can my competitor down the street buy this too?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              No. We enforce strict territory exclusivity: a maximum of 2 HVAC contractors per metropolitan service area. Once the two licenses in your territory are claimed, we lock out all competing shops in your zip codes to protect your speed-to-lead advantage.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta-section" data-sc-act="flow" data-sc-drift="#06080C">
+      <div class="container">
+        <div class="cta-banner-box" data-sc-in>
+          <span class="badge badge-gold" style="margin-bottom:1rem;">DON'T LEAK ANOTHER $10,000 JOB</span>
+          <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom:1rem;">
+            Stop Donating After-Hours Replacements <br>
+            <span class="text-gradient-cyan">To The Next Guy On Google Maps.</span>
+          </h2>
+          <p style="color:#CBD5E1; font-size:1.15rem; max-width:680px; margin:0 auto 2.5rem;">
+            Plug the 24/7 Revenue Recovery Autopilot into your dispatch board in 48 hours. 5 recovered jobs in 30 days or you don't pay a single penny.
           </p>
-        </div>
 
-        <div class="timeline-step-card">
-          <span class="step-hour-badge">DAY 3 &amp; BEYOND</span>
-          <h3 class="step-card-title">4. Revenue Autopilot</h3>
-          <p class="step-card-desc">
-            Missed calls get texted in 11 seconds. After-hours callers get booked. Open estimates get revived. 5 jobs recovered in 30 days or $0 pay.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge badge-gold">FREQUENTLY ASKED QUESTIONS</span>
-        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
-          Straight Answers For HVAC Owners
-        </h2>
-      </div>
-
-      <div class="faq-container">
-        <div class="faq-item active">
-          <button class="faq-question-btn">
-            <span>Does this replace my office manager or receptionist?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            No! It acts as a supercharger for your team. During business hours, your team answers calls as normal. The Autopilot handles overflow during busy peaks (when 3 calls hit at once) and takes over nights, weekends, and holidays so your staff never has to suffer on-call burnout.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>Does the AI sound like a clunky robotic phone tree?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Not at all. We use ultra-low latency conversational voice engines (sub-600ms response time) with natural human inflections, breathing pauses, and contextual understanding. Most callers assume they are speaking to a friendly, highly trained local dispatcher. You can hear it live right now by dialing (888) 482-2247.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>How does it integrate with ServiceTitan / Housecall Pro / Jobber?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            We utilize native webhooks and calendar APIs. When the AI receptionist or SMS engine books a diagnostic or callback, it creates a new customer ticket and drops the job straight into your dispatch board with all caller notes, address details, and problem summary. Your dispatchers change zero habits.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>What happens if an emergency occurs at 2:00 AM?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            The AI is calibrated to differentiate routine inquiries (e.g. "I want an estimate next Tuesday") from urgent emergencies (e.g. "Water leaking through ceiling from air handler" or "Elderly parent with no heat in 20-degree weather"). For urgent emergencies, it can immediately route to your on-call technician or book the first priority 7:00 AM emergency slot.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>How exactly does the "5 Recovered Jobs or Pay Nothing" guarantee work?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            We track every missed call recovered via 15-second text-back and every after-hours call triaged into an appointment, as well as revived dead estimates. If the system does not directly book at least 5 jobs in your first 30 days that you would have otherwise lost, we refund 100% of your setup fee and charge zero retainer. You also keep the numbers, workflows, and reviews for free.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            <span>Can my competitor down the street buy this too?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            No. We enforce strict territory exclusivity: a maximum of 2 HVAC contractors per metropolitan service area. Once the two licenses in your territory are claimed, we lock out all competing shops in your zip codes to protect your speed-to-lead advantage.
+          <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <button class="btn btn-primary btn-lg open-claim-modal" data-sc-magnet="0.25">
+              Check Your Territory &amp; Claim Founding Spot →
+            </button>
+            <a href="tel:+18884822247" class="btn btn-outline btn-lg dynamic-demo-phone">
+              📞 Call Live Demo: (888) 482-2247
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Final CTA Section -->
-  <section class="final-cta-section">
-    <div class="container">
-      <div class="cta-banner-box">
-        <span class="badge badge-gold" style="margin-bottom:1rem;">DON'T LEAK ANOTHER $10,000 JOB</span>
-        <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom:1rem;">
-          Stop Donating After-Hours Replacements <br>
-          <span class="text-gradient-cyan">To The Next Guy On Google Maps.</span>
-        </h2>
-        <p style="color:#CBD5E1; font-size:1.15rem; max-width:680px; margin:0 auto 2.5rem;">
-          Plug the 24/7 Revenue Recovery Autopilot into your dispatch board in 48 hours. 5 recovered jobs in 30 days or you don't pay a single penny.
-        </p>
-
-        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-          <button class="btn btn-primary btn-lg open-claim-modal">
-            Check Your Territory &amp; Claim Founding Spot →
-          </button>
-          <a href="tel:+18884822247" class="btn btn-outline btn-lg dynamic-demo-phone">
-            📞 Call Live Demo: (888) 482-2247
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- Site Footer -->
   <footer class="site-footer">
@@ -908,7 +898,7 @@
       </div>
 
       <div>
-        &copy; <span id="currentYear">2026</span> Revenue Recovery Systems. All Rights Reserved. Built for high-volume HVAC contractors.
+        &copy; <span id="currentYear">2026</span> Carpero. All Rights Reserved. Built for high-volume HVAC contractors.
       </div>
 
       <div style="display:flex; gap:1.25rem;">
@@ -973,7 +963,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.5rem;">
+          <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.5rem;" data-sc-magnet="0.25">
             Lock Territory &amp; Verify Availability →
           </button>
         </form>
@@ -1004,7 +994,7 @@
             </p>
           </div>
 
-          <a href="https://calendly.com" target="_blank" id="openCalendlyBtn" class="btn btn-primary btn-full btn-lg" style="margin-bottom:1rem;">
+          <a href="https://discovery.carpero.com/calendar-page" target="_blank" id="openCalendlyBtn" class="btn btn-primary btn-full btn-lg" style="margin-bottom:1rem;" data-sc-magnet="0.25">
             📅 Select Your 15-Minute Demo Slot Now →
           </a>
 
@@ -1016,8 +1006,15 @@
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts: ScrollCraft Engine + Project Scripts -->
+  <script src="scrollcraft.js"></script>
   <script src="config.js"></script>
   <script src="app.js"></script>
+  <script>
+    // Mount the ScrollCraft interaction runtime
+    if (window.ScrollCraft && typeof window.ScrollCraft.mount === 'function') {
+      window.ScrollCraft.mount(document.body);
+    }
+  </script>
 </body>
 </html>

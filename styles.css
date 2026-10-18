@@ -2140,3 +2140,241 @@ input[type=range]::-webkit-slider-thumb:hover {
     text-align: center;
   }
 }
+
+
+/* ==========================================================================
+   ScrollCraft Engine Integration & Staged Acts
+   ========================================================================== */
+:root {
+  --sc-canvas: #06080C;
+  --sc-surface: #0E131F;
+  --sc-ink: #F8FAFC;
+  --sc-ink-soft: #94A3B8;
+  --sc-accent: #00E5FF;
+  --sc-accent-ink: #06080C;
+  --sc-font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --sc-font-text: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --sc-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Site header stays fixed above pinned stages */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(6, 8, 12, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Top Progress Line */
+[data-sc-progress] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00E5FF, #38BDF8, #F59E0B);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--sc-p, 0));
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Subtle Film Grain Floor */
+.sc-grain {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Act 1: Pinned Dimensional Hero Stage */
+.hero-sc-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--sc-section) * 0.75) var(--sc-gutter);
+  overflow: clip;
+}
+
+.hero-atmosphere-plane {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 50% 15%, rgba(0, 229, 255, 0.12), transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(245, 158, 11, 0.08), transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  z-index: 0;
+}
+
+/* Act 2: Tension Section - The Silent Voicemail Bleed */
+.tension-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem var(--sc-gutter);
+  text-align: center;
+  overflow: clip;
+}
+
+.tension-chamber {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tension-line-block {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.tension-stat-number {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #EF4444;
+  text-shadow: 0 4px 30px rgba(239, 68, 68, 0.35);
+}
+
+.tension-h2 {
+  font-size: clamp(1.85rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #F8FAFC;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.tension-body {
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  color: #94A3B8;
+  max-width: 680px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.tension-loss-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 1rem;
+}
+
+.tension-loss-card {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: var(--sc-e2);
+}
+
+.tension-loss-amount {
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #EF4444;
+}
+
+.tension-loss-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  margin-top: 0.25rem;
+}
+
+.tension-turn-box {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 229, 255, 0.15);
+  max-width: 720px;
+}
+
+/* Act 6: Pinned Scarcity & Commitment Stage */
+.commitment-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem var(--sc-gutter);
+  overflow: clip;
+}
+
+.commitment-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsive adjustments for mobile scroll stages */
+@media (max-width: 768px) {
+  .hero-sc-stage {
+    padding-top: 5rem;
+    min-height: auto;
+    position: relative;
+  }
+  .tension-stage {
+    min-height: auto;
+    position: relative;
+    padding: 4rem 1.25rem;
+  }
+  .tension-chamber {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .tension-line-block {
+    position: relative;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .tension-loss-cards {
+    grid-template-columns: 1fr;
+  }
+  .commitment-stage {
+    min-height: auto;
+    position: relative;
+    padding: 4rem 1.25rem;
+  }
+}
