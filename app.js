@@ -555,7 +555,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const calendlyBtn = document.getElementById('openCalendlyBtn');
           if (calendlyBtn && config.calendarBookingUrl) {
-            calendlyBtn.href = config.calendarBookingUrl;
+            try {
+              const url = new URL(config.calendarBookingUrl);
+              if (formData.ownerName) {
+                url.searchParams.set('name', formData.ownerName);
+                const nameParts = formData.ownerName.trim().split(/\s+/);
+                url.searchParams.set('first_name', nameParts[0] || '');
+                if (nameParts.length > 1) {
+                  url.searchParams.set('last_name', nameParts.slice(1).join(' '));
+                }
+              }
+              if (formData.email) url.searchParams.set('email', formData.email);
+              if (formData.phone) url.searchParams.set('phone', formData.phone);
+              if (formData.companyName) url.searchParams.set('company_name', formData.companyName);
+              calendlyBtn.href = url.toString();
+            } catch (e) {
+              calendlyBtn.href = config.calendarBookingUrl;
+            }
           }
         }
         submitBtn.disabled = false;
