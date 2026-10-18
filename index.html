@@ -14,17 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- ScrollCraft Engine Styles & Custom Taste Floor -->
-  <link rel="stylesheet" href="scrollcraft.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- ScrollCraft Top Progress Indicator -->
-  <span data-sc-progress></span>
-
-  <!-- Subtle Filmic Grain Overlay -->
-  <div class="sc-grain" aria-hidden="true"></div>
 
   <!-- Header / Navigation -->
   <header class="site-header">
@@ -40,8 +32,9 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="#demo">Live Proof Demo</a></li>
+          <li><a href="#leak">The Missed Call Bleed</a></li>
           <li><a href="#calculator">ROI Calculator</a></li>
-          <li><a href="#deliverables">Deliverable Stack</a></li>
+          <li><a href="#deliverables">Deliverables</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -51,7 +44,7 @@
         <a href="tel:+18884822247" class="nav-phone-link dynamic-demo-phone">
           📞 (888) 482-2247
         </a>
-        <button class="btn btn-primary btn-sm open-claim-modal" data-sc-magnet="0.2">
+        <button class="btn btn-primary btn-sm open-claim-modal">
           Claim Territory
         </button>
         <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle Navigation">☰</button>
@@ -62,23 +55,19 @@
   <main id="top">
 
     <!-- =========================================================================
-         ACT 1 · RECOGNITION: Pinned Dimensional Hero Stage
+         Hero Section: Fast-Loading, Direct-Response
          ========================================================================= -->
-    <section data-sc-act="pin" data-sc-span="2.2" data-sc-dwell="0.32" data-sc-drift="#06080C">
-      <div class="hero-sc-stage" data-sc-stage>
-        <!-- Parallax Atmosphere Layer -->
-        <div class="hero-atmosphere-plane" data-sc-parallax="-0.2"></div>
-
-        <div class="container">
-          <div class="hero-grid">
-            <div class="hero-content" data-sc-cue="0 0.85 0">
-              <div class="hero-pill-badge">
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-pill-badge">
                 <span class="badge badge-cyan badge-pulse">
                   ⚡ 48-Hour Rapid Installation • Zero Office Retraining
                 </span>
               </div>
 
-              <h1 class="hero-title" data-sc-kinetic="lines">
+              <h1 class="hero-title">
                 The 24/7 HVAC <br>
                 <span class="text-gradient-cyan">Revenue Recovery</span> Autopilot™
               </h1>
@@ -103,7 +92,7 @@
               </div>
 
               <div class="hero-actions">
-                <button class="btn btn-primary btn-lg open-claim-modal" data-sc-magnet="0.25">
+                <button class="btn btn-primary btn-lg open-claim-modal">
                   Check Territory &amp; Claim Spot →
                 </button>
                 <a href="#demo" class="btn btn-outline btn-lg">
@@ -121,7 +110,7 @@
             </div>
 
             <!-- Hero Right Dimensional Visual Card -->
-            <div class="hero-visual-card" data-sc-parallax="0.1" style="box-shadow: var(--sc-e3);">
+            <div class="hero-visual-card">
               <div class="visual-card-header">
                 <div class="live-indicator">LIVE SYSTEM RUNNING</div>
                 <span class="badge badge-gold">2 Rings Response</span>
@@ -156,7 +145,6 @@
                 <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.25rem;">
                   Dial live &amp; pretend your furnace or AC is broken!
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -164,59 +152,79 @@
     </section>
 
     <!-- =========================================================================
-         ACT 2 · TENSION: Pinned Kinetic Sequence (The Silent Cash Bleed)
+         The Hard Truth: The Silent After-Hours Cash Leak
          ========================================================================= -->
-    <section data-sc-act="pin" data-sc-span="3.2" data-sc-drift="#0A0E17">
-      <div class="tension-stage" data-sc-stage>
-        <div class="tension-chamber">
-          <!-- Tension Beat 1: The Voicemail Fact -->
-          <div class="tension-line-block" data-sc-cue="0 0.28 0">
-            <span class="badge badge-gold">THE HARD TRUTH</span>
+    <section class="tension-section" id="leak">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-gold">THE HARD TRUTH ABOUT AFTER-HOURS CALLS</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
+            Where 5-Truck HVAC Shops Leak <br>
+            <span class="text-gradient-cyan">$15,000 to $40,000 Every Single Month</span>
+          </h2>
+          <p class="subtitle">
+            When an emergency call hits after 5:00 PM or on a weekend, your advertising dollars are actively donating jobs to competitors.
+          </p>
+        </div>
+
+        <div class="tension-grid">
+          <!-- Card 1 -->
+          <div class="tension-card">
             <div class="tension-stat-number">70%</div>
-            <h2 class="tension-h2">Of emergency HVAC callers never leave a voicemail.</h2>
-            <p class="tension-body">
-              When an AC compressor locks up at 8:30 PM on a 98°F Friday night, homeowners don't wait until Monday. They hang up in 5 seconds.
+            <div class="tension-card-badge">THE BEHAVIOR</div>
+            <h3 class="tension-card-title">Hang Up On Voicemail</h3>
+            <p class="tension-card-desc">
+              When an AC compressor locks up on a 95°F Saturday night, homeowners don't leave voicemails. They hang up in 5 seconds.
             </p>
           </div>
 
-          <!-- Tension Beat 2: The Google Rush -->
-          <div class="tension-line-block" data-sc-cue="0.25 0.54">
-            <span class="badge badge-cyan">THE BEHAVIOR</span>
-            <h2 class="tension-h2">They dial the next contractor on Google Maps in 45 seconds.</h2>
-            <p class="tension-body">
-              While your office is closed, your advertising dollars on Google LSA and Yelp are actively donating high-ticket jobs straight to your local competitors.
+          <!-- Card 2 -->
+          <div class="tension-card">
+            <div class="tension-stat-number">45s</div>
+            <div class="tension-card-badge">THE GOOGLE RUSH</div>
+            <h3 class="tension-card-title">Dial Next Local Contractor</h3>
+            <p class="tension-card-desc">
+              They open Google Maps or LSA and call the next guy down the list. The first contractor to answer gets the high-ticket job.
             </p>
           </div>
 
-          <!-- Tension Beat 3: The Financial Drain -->
-          <div class="tension-line-block" data-sc-cue="0.50 0.78">
-            <span class="badge badge-gold">THE BLEED</span>
-            <h2 class="tension-h2">The Real Math of Missed After-Hours Calls:</h2>
-            <div class="tension-loss-cards">
-              <div class="tension-loss-card">
-                <div class="tension-loss-amount">-$450</div>
-                <div class="tension-loss-title">Lost Emergency Diagnostic Call</div>
+          <!-- Card 3 -->
+          <div class="tension-card bleed">
+            <div class="tension-loss-cards-compact">
+              <div class="tension-mini-loss">
+                <span class="loss-amount">-$450</span>
+                <span class="loss-label">Diagnostic Call</span>
               </div>
-              <div class="tension-loss-card">
-                <div class="tension-loss-amount">-$12,800</div>
-                <div class="tension-loss-title">Lost Full System Replacement</div>
+              <div class="tension-mini-loss">
+                <span class="loss-amount">-$12,800</span>
+                <span class="loss-label">System Replacement</span>
               </div>
             </div>
-            <p class="tension-body" style="margin-top:1rem;">
-              The average 5-truck HVAC contractor leaks <strong>$15,000 to $40,000 every single month</strong> into empty voicemails.
+            <div class="tension-card-badge" style="color:#EF4444; border-color:rgba(239,68,68,0.4); margin-top:0.5rem;">THE CASH BLEED</div>
+            <h3 class="tension-card-title">Direct Five-Figure Loss</h3>
+            <p class="tension-card-desc">
+              Just 1 missed replacement quote and 4 missed diagnostic calls per month burns over $14,000 in gross margin.
             </p>
           </div>
+        </div>
 
-          <!-- Tension Beat 4: The Turn -->
-          <div class="tension-line-block" data-sc-cue="0.75">
-            <div class="tension-turn-box">
-              <span class="badge badge-cyan" style="margin-bottom:0.75rem;">THE AUTOPILOT SOLUTION</span>
-              <h2 class="tension-h2" style="font-size: clamp(1.6rem, 2.8vw, 2.4rem); margin-bottom:0.75rem;">
-                Carpero Answers in 2 Rings. Quotes Your Fee. Books The Job In 60 Seconds.
-              </h2>
-              <p class="tension-body" style="font-size:1.05rem;">
-                Zero extra staff. Zero phone system changes. Dispatched straight into ServiceTitan, Housecall Pro, or Jobber.
-              </p>
+        <!-- The Autopilot Solution Banner -->
+        <div class="tension-turn-banner">
+          <div class="turn-banner-content">
+            <span class="badge badge-cyan" style="margin-bottom:0.75rem;">THE AUTOPILOT SOLUTION</span>
+            <h3 style="font-size: clamp(1.5rem, 2.5vw, 2.2rem); margin-bottom:0.65rem; color:#FFFFFF;">
+              Answers In 2 Rings • Quotes Your Fee • Books Straight Into Your Calendar
+            </h3>
+            <p style="color:#CBD5E1; font-size:1.05rem; max-width:720px; margin:0 auto 1.5rem;">
+              Zero new staff to hire. Zero changes to your existing phone carrier. Synced directly into ServiceTitan, Housecall Pro, or Jobber dispatch boards.
+            </p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+              <a href="#demo" class="btn btn-primary">
+                Test Live Voice AI Simulator Below ↓
+              </a>
+              <a href="tel:+18884822247" class="btn btn-outline dynamic-demo-phone">
+                📞 Or Dial (888) 482-2247 Right Now
+              </a>
             </div>
           </div>
         </div>
@@ -226,7 +234,7 @@
     <!-- =========================================================================
          ACT 3 · THE TURN: Signature Move - Interactive Live Audio & MCTB Simulator
          ========================================================================= -->
-    <section class="demo-section" id="demo" data-sc-act="flow" data-sc-drift="#080C14">
+    <section class="demo-section" id="demo">
       <!-- FSM Trust Bar -->
       <div class="trust-bar-section" style="padding: 2rem 0; border-bottom: 1px solid var(--border-subtle);">
         <div class="container">
@@ -269,7 +277,7 @@
       </div>
 
       <div class="container" style="margin-top: 4rem;">
-        <div class="section-header" data-sc-in>
+        <div class="section-header">
           <span class="badge badge-cyan">THE SIGNATURE MOVE</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
             Don't Take Our Word For It. <br>
@@ -281,7 +289,7 @@
         </div>
 
         <!-- Demo Tabs -->
-        <div class="demo-tabs-nav" data-sc-in>
+        <div class="demo-tabs-nav">
           <button class="demo-tab-btn active" data-tab="tab-voice">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             1. Interactive Voice AI Simulator
@@ -297,7 +305,7 @@
         </div>
 
         <!-- Tab 1: Voice AI Simulator -->
-        <div class="demo-tab-content active" id="tab-voice" data-sc-in>
+        <div class="demo-tab-content active" id="tab-voice">
           <div class="call-simulator-card">
             <div class="simulator-topbar">
               <div class="simulator-status">
@@ -335,7 +343,7 @@
                 </div>
 
                 <div class="sim-action-area">
-                  <button class="btn btn-primary btn-full" id="playSimBtn" data-sc-magnet="0.2">
+                  <button class="btn btn-primary btn-full" id="playSimBtn">
                     <span>▶ Test Live Voice AI Call (6:45 PM Saturday)</span>
                   </button>
                   <p style="font-size:0.75rem; color:var(--text-subtle); text-align:center;">
@@ -434,9 +442,9 @@
     <!-- =========================================================================
          ACT 4 · SUBSTANCE: Interactive Revenue Leak Calculator
          ========================================================================= -->
-    <section class="calculator-section" id="calculator" data-sc-act="flow" data-sc-drift="#0B101D">
+    <section class="calculator-section" id="calculator">
       <div class="container">
-        <div class="section-header" data-sc-in>
+        <div class="section-header">
           <span class="badge badge-cyan">INTERACTIVE AUDIT</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
             How Much Cash Is Your HVAC Shop <br>
@@ -447,7 +455,7 @@
           </p>
         </div>
 
-        <div class="calculator-card" data-sc-in>
+        <div class="calculator-card">
           <!-- Inputs -->
           <div class="calc-inputs-col">
             <div class="slider-group">
@@ -501,7 +509,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary btn-full open-claim-modal" data-sc-magnet="0.2">
+            <button class="btn btn-primary btn-full open-claim-modal">
               Recover This Revenue In 48 Hours →
             </button>
           </div>
@@ -512,9 +520,9 @@
     <!-- =========================================================================
          ACT 5 · RANGE: The 48-Hour Rapid Installation Stack
          ========================================================================= -->
-    <section class="stack-section" id="deliverables" data-sc-act="flow" data-sc-drift="#080C16">
+    <section class="stack-section" id="deliverables">
       <div class="container">
-        <div class="section-header" data-sc-in>
+        <div class="section-header">
           <span class="badge badge-gold">THE IRRESISTIBLE DELIVERABLE STACK</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
             Everything Deployed For You In 48 Hours. <br>
@@ -525,7 +533,7 @@
           </p>
         </div>
 
-        <div class="stack-grid" data-sc-in data-sc-stagger="50">
+        <div class="stack-grid">
           <!-- Item 1 -->
           <div class="stack-card">
             <div class="stack-number-box">1</div>
@@ -629,7 +637,7 @@
         </div>
 
         <!-- Total Realistic Value Card -->
-        <div class="stack-total-summary-card" data-sc-in>
+        <div class="stack-total-summary-card">
           <div>
             <div class="stack-total-label">TOTAL REALISTIC DELIVERABLE VALUE:</div>
             <div class="stack-total-sub">Includes 5 core recovery engines + complete integration bonuses</div>
@@ -645,9 +653,9 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing" data-sc-act="flow" data-sc-drift="#0A0D15">
+    <section class="pricing-section" id="pricing">
       <div class="container">
-        <div class="section-header" data-sc-in>
+        <div class="section-header">
           <span class="badge badge-gold">TRANSPARENT FOUNDING PARTNER PRICING</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
             Priced So One Single AC Repair <br>
@@ -658,9 +666,9 @@
           </p>
         </div>
 
-        <div class="pricing-grid" data-sc-in>
+        <div class="pricing-grid">
           <!-- Founding Partner Tier (Featured) -->
-          <div class="pricing-card featured" style="box-shadow: var(--sc-e3);">
+          <div class="pricing-card featured">
             <div class="featured-top-badge">Founding Partner Tier (First 10 Shops Only)</div>
             
             <div>
@@ -712,7 +720,7 @@
             </div>
 
             <div>
-              <button class="btn btn-primary btn-full open-claim-modal" data-sc-magnet="0.25">
+              <button class="btn btn-primary btn-full open-claim-modal">
                 Claim Founding Partner Spot ($497/mo Locked) →
               </button>
               <div style="font-size:0.75rem; color:#94A3B8; text-align:center; margin-top:0.75rem;">
@@ -765,50 +773,48 @@
     </section>
 
     <!-- =========================================================================
-         ACT 6 · COMMITMENT & SCARCITY: Pinned Closing Stage
+         Territory Exclusivity & Scarcity Check
          ========================================================================= -->
-    <section id="territory" data-sc-act="pin" data-sc-span="1.6" data-sc-drift="#06080C">
-      <div class="commitment-stage" data-sc-stage>
-        <div class="commitment-container">
-          <div class="territory-card" style="box-shadow: var(--sc-e3);">
-            <div class="territory-notice-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              STRICT POLICY: MAXIMUM 2 HVAC CONTRACTORS PER METRO SERVICE AREA
-            </div>
-
-            <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-bottom:1rem;" data-sc-kinetic="lines">
-              We Cannot Give Your Direct Competitors <br>
-              <span class="text-gradient-cyan">The Exact Same Advantage.</span>
-            </h2>
-
-            <p style="color:var(--text-muted); font-size:1.05rem; max-width:680px; margin:0 auto 2.25rem;">
-              To protect your competitive speed-to-lead advantage on Google Maps, we strictly limit deployment to 2 shops per metropolitan area. Once filled, that territory is locked.
-            </p>
-
-            <form class="territory-input-form" id="territoryCheckForm">
-              <input type="text" class="territory-input" id="territoryInput" placeholder="Enter Your Zip Code or Metro (e.g. 75001 or Dallas, TX)" required>
-              <button type="submit" class="btn btn-primary" data-sc-magnet="0.25">
-                Check Availability &amp; Claim →
-              </button>
-            </form>
-
-            <div id="territoryResultDisplay" class="territory-result-display"></div>
+    <section class="territory-section" id="territory">
+      <div class="container">
+        <div class="territory-card">
+          <div class="territory-notice-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            STRICT POLICY: MAXIMUM 2 HVAC CONTRACTORS PER METRO SERVICE AREA
           </div>
+
+          <h2 style="font-size: clamp(2rem, 3.2vw, 2.75rem); margin-bottom:1rem;">
+            We Cannot Give Your Direct Competitors <br>
+            <span class="text-gradient-cyan">The Exact Same Advantage.</span>
+          </h2>
+
+          <p style="color:var(--text-muted); font-size:1.05rem; max-width:680px; margin:0 auto 2.25rem;">
+            To protect your competitive speed-to-lead advantage on Google Maps, we strictly limit deployment to 2 shops per metropolitan area. Once filled, that territory is locked.
+          </p>
+
+          <form class="territory-input-form" id="territoryCheckForm">
+            <input type="text" class="territory-input" id="territoryInput" placeholder="Enter Your Zip Code or Metro (e.g. 75001 or Dallas, TX)" required>
+            <button type="submit" class="btn btn-primary">
+              Check Availability &amp; Claim →
+            </button>
+          </form>
+
+          <div id="territoryResultDisplay" class="territory-result-display"></div>
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section" id="faq" data-sc-act="flow" data-sc-drift="#07090E">
+    <section class="faq-section" id="faq">
       <div class="container">
-        <div class="section-header" data-sc-in>
+        <div class="section-header">
           <span class="badge badge-gold">FREQUENTLY ASKED QUESTIONS</span>
           <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-top:0.75rem;">
             Straight Answers For HVAC Owners
           </h2>
         </div>
 
-        <div class="faq-container" data-sc-in>
+        <div class="faq-container">
           <div class="faq-item active">
             <button class="faq-question-btn">
               <span>Does this replace my office manager or receptionist?</span>
@@ -863,9 +869,9 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="final-cta-section" data-sc-act="flow" data-sc-drift="#06080C">
+    <section class="final-cta-section">
       <div class="container">
-        <div class="cta-banner-box" data-sc-in>
+        <div class="cta-banner-box">
           <span class="badge badge-gold" style="margin-bottom:1rem;">DON'T LEAK ANOTHER $10,000 JOB</span>
           <h2 style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom:1rem;">
             Stop Donating After-Hours Replacements <br>
@@ -876,7 +882,7 @@
           </p>
 
           <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-            <button class="btn btn-primary btn-lg open-claim-modal" data-sc-magnet="0.25">
+            <button class="btn btn-primary btn-lg open-claim-modal">
               Check Your Territory &amp; Claim Founding Spot →
             </button>
             <a href="tel:+18884822247" class="btn btn-outline btn-lg dynamic-demo-phone">
@@ -963,7 +969,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.5rem;" data-sc-magnet="0.25">
+          <button type="submit" class="btn btn-primary btn-full btn-lg" style="margin-top:0.5rem;">
             Lock Territory &amp; Verify Availability →
           </button>
         </form>
@@ -994,7 +1000,7 @@
             </p>
           </div>
 
-          <a href="https://discovery.carpero.com/calendar-page" target="_blank" id="openCalendlyBtn" class="btn btn-primary btn-full btn-lg" style="margin-bottom:1rem;" data-sc-magnet="0.25">
+          <a href="https://discovery.carpero.com/calendar-page" target="_blank" id="openCalendlyBtn" class="btn btn-primary btn-full btn-lg" style="margin-bottom:1rem;">
             📅 Select Your 15-Minute Demo Slot Now →
           </a>
 
@@ -1006,15 +1012,8 @@
     </div>
   </div>
 
-  <!-- Scripts: ScrollCraft Engine + Project Scripts -->
-  <script src="scrollcraft.js"></script>
+  <!-- Scripts -->
   <script src="config.js"></script>
   <script src="app.js"></script>
-  <script>
-    // Mount the ScrollCraft interaction runtime
-    if (window.ScrollCraft && typeof window.ScrollCraft.mount === 'function') {
-      window.ScrollCraft.mount(document.body);
-    }
-  </script>
 </body>
 </html>
