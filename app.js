@@ -385,74 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
   calculateHvacRevenue();
 
   // =========================================================================
-  // 5. Territory Availability & Zip Code Checker
-  // =========================================================================
-  const territoryForm = document.getElementById('territoryCheckForm');
-  const territoryInput = document.getElementById('territoryInput');
-  const territoryResult = document.getElementById('territoryResultDisplay');
-
-  if (territoryForm) {
-    territoryForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const query = (territoryInput.value || '').trim();
-      if (!query) return;
-
-      territoryResult.style.display = 'block';
-      territoryResult.className = 'territory-result-display';
-      territoryResult.innerHTML = `
-        <div style="display:flex; align-items:center; gap:0.5rem; color:#38BDF8;">
-          <span class="badge-pulse"></span>
-          <strong>Scanning metro dispatch exclusivity database for "${query}"...</strong>
-        </div>
-      `;
-
-      setTimeout(() => {
-        territoryResult.className = 'territory-result-display available';
-        territoryResult.innerHTML = `
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <span class="badge badge-green" style="margin-bottom:0.5rem;">STATUS: 1 OF 2 SPOTS CLAIMED</span>
-              <h4 style="font-size:1.25rem; font-weight:800; color:#FFFFFF; margin-bottom:0.25rem;">
-                Territory Available: "${query.toUpperCase()}"
-              </h4>
-              <p style="font-size:0.9rem; color:#CBD5E1; max-width:540px;">
-                Only <strong>1 exclusive license</strong> remains for this market. Once filled, no additional HVAC contractor in your service area can deploy the Autopilot.
-              </p>
-            </div>
-            <button class="btn btn-primary btn-sm open-reservation-modal" data-prefill="${query}">
-              Lock My Territory Spot Now →
-            </button>
-          </div>
-          <div style="margin-top:1rem; font-size:0.8rem; color:#94A3B8; border-top:1px solid rgba(255,255,255,0.1); padding-top:0.75rem;">
-            ⏳ Territory reservation hold active for: <strong style="color:#FBBF24;" id="territoryHoldTimer">14:59</strong>
-          </div>
-        `;
-
-        // Start countdown timer
-        let holdSec = 899;
-        const holdInterval = setInterval(() => {
-          holdSec--;
-          const timerEl = document.getElementById('territoryHoldTimer');
-          if (!timerEl || holdSec <= 0) {
-            clearInterval(holdInterval);
-            return;
-          }
-          const m = Math.floor(holdSec / 60);
-          const s = holdSec % 60;
-          timerEl.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
-        }, 1000);
-
-        // Bind button inside result
-        const btn = territoryResult.querySelector('.open-reservation-modal');
-        if (btn) {
-          btn.addEventListener('click', () => openModal(query));
-        }
-      }, 900);
-    });
-  }
-
-  // =========================================================================
-  // 6. Territory Reservation Modal & Webhook Lead Dispatcher
+  // 5. Founding Partner Reservation Modal & Webhook Lead Dispatcher
   // =========================================================================
   const modalOverlay = document.getElementById('reservationModal');
   const closeModalBtn = document.getElementById('closeModalBtn');

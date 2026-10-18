@@ -16,8 +16,7 @@ window.HVAC_CONFIG = {
   demoPhoneNumber: "(888) 482-2247",
   demoPhoneNumberRaw: "+18884822247",
   
-  // Territory Exclusivity Settings
-  maxSpotsPerTerritory: 2,
+  // Founding Partner Scarcity Settings
   foundingPartnerSpotsTotal: 10,
   foundingPartnerSpotsClaimed: 8, // Shows 2 spots remaining
   
