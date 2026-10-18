@@ -57,7 +57,7 @@ window.HVAC_CONFIG = {
   
   // Calendar / Booking Link (Calendly, Cal.com, or GHL calendar URL)
   // Set this to open your calendar inside the confirmation modal or redirect
-  calendarBookingUrl: "https://api.leadconnectorhq.com/widget/booking/Orm5YQIwK1MgN9w5Z2Vw",
+  calendarBookingUrl: "https://discovery.carpero.com/calendar-page",
 
   // Demo Audio Simulation Defaults
   audioDemo: {
