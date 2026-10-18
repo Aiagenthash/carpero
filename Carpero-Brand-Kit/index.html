@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARPERO™ // Official Brand Identity Kit</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="brand-tokens.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--carpero-bg-abyss);
+      color: var(--carpero-text-primary);
+      font-family: var(--carpero-font-body);
+      line-height: 1.6;
+      padding: 40px 24px 80px;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: var(--carpero-emerald-soft);
+      border: 1px solid rgba(0, 245, 155, 0.3);
+      color: var(--carpero-emerald);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: var(--carpero-font-display);
+      font-size: 46px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      color: var(--carpero-text-secondary);
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Master Hero Showcase */
+    .hero-banner {
+      background: var(--carpero-bg-card);
+      border: 1px solid var(--carpero-border);
+      border-radius: 24px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 40px;
+      margin-bottom: 60px;
+      box-shadow: var(--carpero-card-shadow);
+    }
+    .hero-img-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 380px;
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(0, 245, 155, 0.25);
+    }
+    .hero-info h2 {
+      font-family: var(--carpero-font-display);
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .hero-desc {
+      color: var(--carpero-text-secondary);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+
+    /* Asset Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    .card {
+      background: var(--carpero-bg-card);
+      border: 1px solid var(--carpero-border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: var(--carpero-border-hover);
+      transform: translateY(-4px);
+    }
+    .card-preview {
+      background: radial-gradient(circle at center, rgba(0, 210, 255, 0.05) 0%, transparent 70%);
+      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      border-bottom: 1px solid var(--carpero-border);
+    }
+    .card-body { padding: 24px; }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--carpero-cyan-soft);
+      color: var(--carpero-cyan);
+      font-weight: 600;
+    }
+    .card-desc {
+      color: var(--carpero-text-secondary);
+      font-size: 13.5px;
+      margin-bottom: 16px;
+    }
+    .file-pill {
+      display: inline-block;
+      font-family: var(--carpero-font-mono);
+      font-size: 12px;
+      color: var(--carpero-emerald);
+      background: rgba(0, 245, 155, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* Color Swatches */
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+    .swatch {
+      padding: 24px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--carpero-border);
+      text-align: center;
+    }
+    .swatch-hex {
+      font-family: var(--carpero-font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .swatch-label {
+      font-size: 12px;
+      color: var(--carpero-text-secondary);
+      margin-top: 2px;
+    }
+
+    /* Prompt Box */
+    .prompt-box {
+      background: var(--carpero-bg-card);
+      border: 1px solid var(--carpero-border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 50px;
+    }
+    .prompt-box h3 {
+      font-family: var(--carpero-font-display);
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .code-block {
+      background: #040508;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: var(--carpero-font-mono);
+      font-size: 13.5px;
+      color: var(--carpero-emerald);
+      overflow-x: auto;
+      margin-top: 14px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="pill">Official Brand Kit v2.0</div>
+      <h1>CARPERO™ Brand System</h1>
+      <p class="subtitle">Autonomous Revenue Recovery Systems — Turnkey brand identity, vector assets, and AI website revamp directives.</p>
+    </header>
+
+    <!-- Master Logo Hero -->
+    <div class="hero-banner">
+      <div class="hero-img-wrap">
+        <img src="assets/logo-master-3d.jpg" alt="Carpero Master 3D Mobius Loop Logo" class="hero-img">
+      </div>
+      <div class="hero-info">
+        <span class="pill" style="margin-bottom: 12px;">Chosen Master Mark</span>
+        <h2>The Mobius Recovery Loop</h2>
+        <p class="hero-desc">
+          An interwoven 3D tubular ribbon forming the iconic <strong>'C'</strong> in neon emerald green and kinetic cyan. Symbolizes closed-loop automated recovery, capturing leaked cash flow and accelerating growth.
+        </p>
+        <p style="font-size: 14px; color: var(--carpero-text-secondary); margin-bottom: 20px;">
+          <strong>Target Domain:</strong> <a href="https://carpero.com" target="_blank" style="color: var(--carpero-cyan); text-decoration: none;">carpero.com</a><br>
+          <strong>Positioning:</strong> Autonomous Revenue Recovery Systems
+        </p>
+        <a href="AI_WEBSITE_REVAMP_INSTRUCTIONS.md" class="file-pill">View AI Revamp Prompt →</a>
+      </div>
+    </div>
+
+    <!-- Vector Assets Grid -->
+    <h3 style="font-family: var(--carpero-font-display); font-size: 24px; margin-bottom: 20px;">Production Vector Assets</h3>
+    <div class="grid">
+      <!-- Horizontal -->
+      <div class="card">
+        <div class="card-preview">
+          <img src="assets/logo-horizontal.svg" alt="Horizontal Logo" style="width: 280px;">
+        </div>
+        <div class="card-body">
+          <div class="card-title">
+            Horizontal Navbar Logo
+            <span class="card-tag">Navbar &amp; Header</span>
+          </div>
+          <p class="card-desc">Left-aligned dual-loop mark with CARPERO logotype and subtitle.</p>
+          <a href="assets/logo-horizontal.svg" download class="file-pill">assets/logo-horizontal.svg</a>
+        </div>
+      </div>
+
+      <!-- Vertical Stacked -->
+      <div class="card">
+        <div class="card-preview">
+          <img src="assets/logo-stacked.svg" alt="Stacked Logo" style="width: 170px;">
+        </div>
+        <div class="card-body">
+          <div class="card-title">
+            Vertical Stacked Lockup
+            <span class="card-tag">Splash &amp; Deck</span>
+          </div>
+          <p class="card-desc">Centered lockup with radiant glow matching the 3D master render.</p>
+          <a href="assets/logo-stacked.svg" download class="file-pill">assets/logo-stacked.svg</a>
+        </div>
+      </div>
+
+      <!-- Standalone Mark & Favicon -->
+      <div class="card">
+        <div class="card-preview" style="gap: 24px;">
+          <img src="assets/favicon.svg" alt="Favicon" style="width: 64px; height: 64px;">
+          <img src="assets/logo-mark.svg" alt="Standalone Mark" style="width: 80px; height: 80px;">
+        </div>
+        <div class="card-body">
+          <div class="card-title">
+            Icon Mark &amp; Favicon
+            <span class="card-tag">App &amp; Browser</span>
+          </div>
+          <p class="card-desc">Pure standalone ribbon mark for social avatars, browser tabs, and app icons.</p>
+          <a href="assets/logo-mark.svg" download class="file-pill">assets/logo-mark.svg</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand Color Palette -->
+    <h3 style="font-family: var(--carpero-font-display); font-size: 24px; margin-bottom: 20px;">Official Color Tokens</h3>
+    <div class="swatches">
+      <div class="swatch" style="background: #00F59B; color: #07090E;">
+        <strong>Recovery Emerald</strong>
+        <div class="swatch-hex">#00F59B</div>
+        <div class="swatch-label" style="color: #07090E;">Primary Growth</div>
+      </div>
+      <div class="swatch" style="background: #00D2FF; color: #07090E;">
+        <strong>Kinetic Cyan</strong>
+        <div class="swatch-hex">#00D2FF</div>
+        <div class="swatch-label" style="color: #07090E;">Tech Precision</div>
+      </div>
+      <div class="swatch" style="background: #07090E; color: #FFFFFF;">
+        <strong>Obsidian Abyss</strong>
+        <div class="swatch-hex">#07090E</div>
+        <div class="swatch-label">Background Void</div>
+      </div>
+      <div class="swatch" style="background: #0F131C; color: #FFFFFF;">
+        <strong>Card Surface</strong>
+        <div class="swatch-hex">#0F131C</div>
+        <div class="swatch-label">Containers &amp; UI</div>
+      </div>
+    </div>
+
+    <!-- Drop-In AI Prompt Directive -->
+    <div class="prompt-box">
+      <h3>🤖 How to Revamp Your Website with an AI Agent</h3>
+      <p style="color: var(--carpero-text-secondary); font-size: 14.5px;">
+        Whenever you want an AI assistant (Antigravity, Cursor, Claude, or Copilot) to revamp or rebuild your website, simply point to this folder and copy this one-line command:
+      </p>
+      <div class="code-block">"Revamp our website using the specifications, assets, and design tokens in the Carpero-Brand-Kit folder. Follow the complete section blueprint in AI_WEBSITE_REVAMP_INSTRUCTIONS.md."</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Emerald Loop Gradient -->
+    <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F59B" />
+      <stop offset="60%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Cyan Loop Gradient -->
+    <linearGradient id="cyan-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <!-- Volumetric Glow Layer -->
+    <filter id="core-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Behind Interlocking Loops -->
+  <g filter="url(#core-glow)" opacity="0.45">
+    <path d="M 120 55 C 90 40 50 55 50 95 C 50 135 90 155 125 140 C 145 130 155 110 145 85 C 135 60 110 55 95 65 C 80 75 75 95 85 115 C 95 135 120 130 130 115" 
+          fill="none" stroke="#00F59B" stroke-width="26" stroke-linecap="round" />
+    <path d="M 85 140 C 115 155 155 140 155 100 C 155 60 115 40 80 55 C 60 65 50 85 60 110 C 70 135 95 140 110 130 C 125 120 130 100 120 80 C 110 60 85 65 75 80" 
+          fill="none" stroke="#00D2FF" stroke-width="26" stroke-linecap="round" />
+  </g>
+
+  <!-- Primary Precision Tubular Mobius C Ribbon -->
+  <!-- Outer Emerald Loop (Left & Foundation) -->
+  <path d="M 108 42 C 70 38 48 64 48 98 C 48 132 72 158 112 154 C 138 150 154 132 150 106 C 146 80 124 74 104 84 C 84 94 82 114 96 128" 
+        fill="none" stroke="url(#emerald-grad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Inner Cyan Loop (Intersecting & Forward Arch) -->
+  <path d="M 92 154 C 130 158 152 132 152 98 C 152 64 128 38 88 42 C 62 46 46 64 50 90 C 54 116 76 122 96 112 C 116 102 118 82 104 68" 
+        fill="none" stroke="url(#cyan-grad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Intersection Highlight Node -->
+  <circle cx="100" cy="98" r="4.5" fill="#FFFFFF" opacity="0.9" />
+</svg>

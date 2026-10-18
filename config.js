@@ -1,18 +1,18 @@
 /**
- * The 24/7 HVAC Revenue Recovery Autopilot™
+ * CARPERO™ - Autonomous Revenue Recovery Systems
  * Central Configuration File
  * 
- * Customize these values to plug this landing page directly into your domain,
- * CRM, Twilio/Vapi phone number, and calendar in under 60 seconds.
+ * Domain: carpero.com
  */
 
-window.HVAC_CONFIG = {
+window.CARPERO_CONFIG = {
   // Brand & Company Info
-  brandName: "The 24/7 HVAC Revenue Recovery Autopilot™",
-  agencyName: "Carpero",
-  supportEmail: "support@carpero.com",
+  brandName: "CARPERO™",
+  brandSubtitle: "Autonomous Revenue Recovery Systems",
+  agencyName: "Carpero Inc.",
+  supportEmail: "hello@carpero.com",
   
-  // Live Demo Phone Number (Displayed across the page for callers to test live)
+  // Live Demo Phone Number
   demoPhoneNumber: "(888) 482-2247",
   demoPhoneNumberRaw: "+18884822247",
   
@@ -24,25 +24,21 @@ window.HVAC_CONFIG = {
   pricing: {
     founding: {
       setupFee: "$997",
-      setupFeeSubtext: "or $0 upfront (billed after 5th job recovered)",
+      setupFeeSubtext: "or $0 upfront (billed after first revenue recovered)",
       monthlyFee: "$497",
       monthlyBillingPeriod: "/month",
       term: "Month-to-Month (Cancel anytime)",
-      guarantee: "5 Booked Jobs in 30 Days or 100% Refund"
+      guarantee: "100% Performance Guarantee: Recovers Revenue or You Pay $0"
     },
     standard: {
       setupFee: "$2,497",
       monthlyFee: "$997",
       monthlyBillingPeriod: "/month",
       term: "6-Month Agreement",
-      guarantee: "Standard 30-Day Guarantee"
+      guarantee: "Standard 30-Day Performance Guarantee"
     }
   },
 
-  // Guarantee Specifics
-  guaranteeJobsThreshold: 5,
-  guaranteeDays: 30,
-  
   // GoHighLevel (LeadConnector) Integration
   ghl: {
     locationId: "4rsitvcF0nWZXBh5xzf8",
@@ -50,20 +46,12 @@ window.HVAC_CONFIG = {
     pipelineId: "WeVSKhJlQeCBr6MXxAbF"
   },
 
-  // Webhook Endpoint (Zapier, Make, GoHighLevel, or your backend)
-  // When a contractor claims a territory or requests a demo, form data will POST here.
-  webhookUrl: "https://hook.us1.make.com/your-webhook-id-here", // Replace with your webhook
+  // Webhook Endpoint (Zapier, Make, or GHL)
+  webhookUrl: "https://hook.us1.make.com/your-webhook-id-here",
   
-  // Calendar / Booking Link (Calendly, Cal.com, or GHL calendar URL)
-  // Set this to open your calendar inside the confirmation modal or redirect
-  calendarBookingUrl: "https://discovery.carpero.com/calendar-page",
-
-  // Demo Audio Simulation Defaults
-  audioDemo: {
-    customerName: "David Miller",
-    customerIssue: "AC unit blowing warm air, loud condenser buzzing",
-    diagnosticFee: "$89",
-    suggestedSlot: "Tomorrow morning between 8:00 AM - 10:00 AM",
-    systemReplacementLeadValue: "$12,800"
-  }
+  // Calendar / Booking Link (Live GHL Sub-account calendar on discovery.carpero.com)
+  calendarBookingUrl: "https://discovery.carpero.com/calendar-page"
 };
+
+// Backward-compatibility alias
+window.HVAC_CONFIG = window.CARPERO_CONFIG;

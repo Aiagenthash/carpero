@@ -1,0 +1,110 @@
+/**
+ * CARPERO™ Brand Design Tokens
+ * Version: 2.0 (Mobius Loop SaaS Edition)
+ * Domain: carpero.com
+ */
+
+:root {
+  /* ==========================================================
+     CORE COLOR PALETTE (Extracted from Master 3D Mobius Logo)
+     ========================================================== */
+  
+  /* Primary Brand Neon Accents */
+  --carpero-emerald: #00F59B;
+  --carpero-emerald-glow: rgba(0, 245, 155, 0.35);
+  --carpero-emerald-soft: rgba(0, 245, 155, 0.12);
+  --carpero-emerald-dark: #059669;
+
+  --carpero-cyan: #00D2FF;
+  --carpero-cyan-glow: rgba(0, 210, 255, 0.35);
+  --carpero-cyan-soft: rgba(0, 210, 255, 0.12);
+  --carpero-cyan-dark: #0284C7;
+
+  /* Deep Backgrounds (Obsidian & Void) */
+  --carpero-bg-abyss: #07090E;
+  --carpero-bg-card: #0F131C;
+  --carpero-bg-card-hover: #161C2A;
+  --carpero-bg-elevated: #1C2333;
+
+  /* Borders & Glassmorphism */
+  --carpero-border: rgba(255, 255, 255, 0.08);
+  --carpero-border-hover: rgba(0, 245, 155, 0.3);
+  --carpero-border-glow: rgba(0, 210, 255, 0.3);
+  --carpero-glass-bg: rgba(15, 19, 28, 0.7);
+  --carpero-glass-blur: blur(16px);
+
+  /* Typography Colors */
+  --carpero-text-primary: #FFFFFF;
+  --carpero-text-secondary: #94A3B8;
+  --carpero-text-muted: #64748B;
+  --carpero-text-inverse: #07090E;
+
+  /* Status Colors */
+  --carpero-status-recovered: #00F59B;
+  --carpero-status-leaking: #F59E0B;
+  --carpero-status-lost: #EF4444;
+
+  /* ==========================================================
+     TYPOGRAPHY SYSTEM
+     ========================================================== */
+  --carpero-font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --carpero-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --carpero-font-mono: 'JetBrains Mono', monospace;
+
+  /* ==========================================================
+     SHADOWS & GLOWS
+     ========================================================== */
+  --carpero-glow-sm: 0 0 16px rgba(0, 245, 155, 0.2);
+  --carpero-glow-md: 0 0 32px rgba(0, 245, 155, 0.28);
+  --carpero-glow-lg: 0 0 64px rgba(0, 210, 255, 0.25);
+  --carpero-card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+
+  /* ==========================================================
+     SIGNATURE GRADIENTS
+     ========================================================== */
+  --carpero-gradient-brand: linear-gradient(135deg, #00F59B 0%, #00D2FF 100%);
+  --carpero-gradient-text: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
+  --carpero-gradient-accent-text: linear-gradient(135deg, #00F59B 0%, #00D2FF 100%);
+  --carpero-gradient-card: radial-gradient(circle at top left, rgba(0, 245, 155, 0.05) 0%, rgba(0, 210, 255, 0.03) 50%, transparent 80%);
+}
+
+/* ==========================================================
+   UTILITY HELPER CLASSES
+   ========================================================== */
+.carpero-gradient-text {
+  background: var(--carpero-gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.carpero-glow-btn {
+  background: var(--carpero-gradient-brand);
+  color: var(--carpero-text-inverse);
+  font-family: var(--carpero-font-display);
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(0, 245, 155, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carpero-glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(0, 210, 255, 0.5);
+}
+
+.carpero-card {
+  background: var(--carpero-bg-card);
+  border: 1px solid var(--carpero-border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.2s ease;
+}
+
+.carpero-card:hover {
+  border-color: var(--carpero-border-hover);
+  box-shadow: var(--carpero-glow-sm);
+  transform: translateY(-3px);
+}

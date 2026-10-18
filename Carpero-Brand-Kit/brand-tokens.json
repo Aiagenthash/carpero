@@ -1,0 +1,55 @@
+{
+  "brand": {
+    "name": "Carpero",
+    "domain": "carpero.com",
+    "tagline": "Stop the bleed. Seize the revenue.",
+    "positioning": "Autonomous Revenue Recovery Systems"
+  },
+  "colors": {
+    "primary": {
+      "emerald": "#00F59B",
+      "emeraldDark": "#059669",
+      "cyan": "#00D2FF",
+      "cyanDark": "#0284C7"
+    },
+    "background": {
+      "abyss": "#07090E",
+      "card": "#0F131C",
+      "cardHover": "#161C2A",
+      "elevated": "#1C2333"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#94A3B8",
+      "muted": "#64748B",
+      "inverse": "#07090E"
+    },
+    "status": {
+      "recovered": "#00F59B",
+      "leaking": "#F59E0B",
+      "lost": "#EF4444"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "Plus Jakarta Sans, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900
+    }
+  },
+  "assets": {
+    "master3D": "assets/logo-master-3d.jpg",
+    "vectorMark": "assets/logo-mark.svg",
+    "vectorHorizontal": "assets/logo-horizontal.svg",
+    "vectorStacked": "assets/logo-stacked.svg",
+    "favicon": "assets/favicon.svg"
+  }
+}

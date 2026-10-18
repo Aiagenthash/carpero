@@ -1,391 +1,193 @@
 /**
- * The 24/7 HVAC Revenue Recovery Autopilot™ - Interactive Client Logic
+ * CARPERO™ - Autonomous Revenue Recovery Systems
+ * Interactive Client Application Logic
+ * Domain: carpero.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const config = window.HVAC_CONFIG || {};
+  const config = window.CARPERO_CONFIG || window.HVAC_CONFIG || {};
 
   // =========================================================================
   // 1. Populate Dynamic Config Data into UI
   // =========================================================================
   function initDynamicContent() {
-    // Phone numbers
+    // Demo phone numbers
     const demoPhones = document.querySelectorAll('.dynamic-demo-phone');
     demoPhones.forEach(el => {
-      el.textContent = config.demoPhoneNumber || "(888) 482-2247";
+      const phone = config.demoPhoneNumber || "(888) 482-2247";
+      const raw = config.demoPhoneNumberRaw || "+18884822247";
       if (el.tagName === 'A') {
-        el.href = `tel:${config.demoPhoneNumberRaw || "+18884822247"}`;
+        el.href = `tel:${raw}`;
+        if (el.textContent.includes('(') || el.textContent.trim().startsWith('📞')) {
+          el.textContent = `📞 ${phone}`;
+        }
+      } else {
+        el.textContent = phone;
       }
     });
 
-    // Spots remaining
-    const spotsLeft = (config.foundingPartnerSpotsTotal || 10) - (config.foundingPartnerSpotsClaimed || 8);
+    // Founding Partner Spots Scarcity
+    const totalSpots = config.foundingPartnerSpotsTotal || 10;
+    const claimedSpots = config.foundingPartnerSpotsClaimed || 8;
+    const spotsLeft = Math.max(1, totalSpots - claimedSpots);
     const spotsEls = document.querySelectorAll('.dynamic-spots-left');
-    spotsEls.forEach(el => el.textContent = `${spotsLeft} Spots Remaining`);
+    spotsEls.forEach(el => {
+      el.textContent = `${spotsLeft} of ${totalSpots} Spots Left`;
+    });
 
     // Pricing
     const foundSetup = document.querySelectorAll('.dynamic-founding-setup');
-    foundSetup.forEach(el => el.textContent = config.pricing?.founding?.setupFee || "$997");
+    foundSetup.forEach(el => {
+      el.textContent = config.pricing?.founding?.setupFee || "$997";
+    });
 
     const foundMonthly = document.querySelectorAll('.dynamic-founding-monthly');
-    foundMonthly.forEach(el => el.textContent = config.pricing?.founding?.monthlyFee || "$497");
+    foundMonthly.forEach(el => {
+      const monthly = config.pricing?.founding?.monthlyFee || "$497";
+      el.innerHTML = `${monthly}<span>/month</span>`;
+    });
+
+    // Current Year in Footer
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
   }
 
   initDynamicContent();
 
   // =========================================================================
-  // 2. Interactive Voice AI Simulator
+  // 2. Interactive Revenue Leak Calculator
   // =========================================================================
-  const scenarios = {
-    emergency: {
-      title: "Saturday 6:45 PM AC Breakdown (Emergency Triage)",
-      steps: [
-        { speaker: "caller", text: "Hey, it's 6:45 PM on a Saturday and our AC compressor locked up. It's 88 degrees in here with two kids. Do you have an emergency tech available?", voice: "caller" },
-        { speaker: "ai", text: "Hi there! I can help with that right away. That definitely counts as an urgent climate situation. We have an on-call emergency technician available tomorrow between 8:00 AM and 10:00 AM. Our standard diagnostic dispatch fee is $89, which applies directly toward any approved repair. Would you like me to reserve that window for you?", voice: "ai" },
-        { speaker: "caller", text: "Yes please, that would be a lifesaver. My name is David Miller at 412 Maple Ridge Road.", voice: "caller" },
-        { speaker: "ai", text: "Got you confirmed, David! I've reserved the 8:00 AM window on our dispatch board, sent an alert to our on-call technician, and just texted you a confirmation link with live tracking. We'll take great care of you tomorrow!", voice: "ai" }
-      ],
-      fsmTicket: {
-        customer: "David Miller",
-        address: "412 Maple Ridge Rd",
-        issue: "AC Compressor Locked Up / Urgent No-Cool",
-        slot: "Tomorrow, 8:00 AM – 10:00 AM",
-        value: "Diagnostic: $89 + Potential $1,200 Coil/Capacitor Repair",
-        fsmStatus: "⚡ Synced directly into ServiceTitan Dispatch Board"
-      }
-    },
-    replacement: {
-      title: "Cold $12,500 System Replacement Quote Revived",
-      steps: [
-        { speaker: "caller", text: "Hi, your tech Mike quoted us on a new 16 SEER2 heat pump system two weeks ago. We had a question about the $2,000 federal tax credit and 0% financing.", voice: "caller" },
-        { speaker: "ai", text: "Welcome back! I can pull up Mike's quote right here. That 16 SEER2 system qualifies for up to $2,000 under the federal 25C Energy Efficiency credit, and we currently have 0% APR financing for 18 months. Would you like Mike to give you a quick 5-minute call at 9:00 AM tomorrow to lock in the rebate window?", voice: "ai" },
-        { speaker: "caller", text: "Yes, 9:00 AM tomorrow works great. Thanks for the quick answer!", voice: "caller" },
-        { speaker: "ai", text: "Done! I've scheduled Mike's callback for 9:00 AM tomorrow and just sent the financing worksheet to your phone. Have a wonderful evening!", voice: "ai" }
-      ],
-      fsmTicket: {
-        customer: "Sarah Jenkins",
-        address: "8840 Oak Valley Way",
-        issue: "System Replacement Quote Reactivation (16 SEER2)",
-        slot: "Tomorrow, 9:00 AM Callback Scheduled",
-        value: "High-Ticket Replacement: $12,500",
-        fsmStatus: "⚡ Opportunity Moved to 'Proposal In Review' in Housecall Pro"
-      }
-    },
-    tuneup: {
-      title: "Shoulder-Season Pre-Season AC Tune-Up",
-      steps: [
-        { speaker: "caller", text: "Hi, I saw your text about the pre-summer $69 21-point AC inspection before the heatwave hits next month. Is that still open?", voice: "caller" },
-        { speaker: "ai", text: "Yes! That tune-up special is active this week to make sure your system doesn't trip a capacitor during the first 90-degree weekend. We have openings this Thursday at 1:00 PM or Friday at 10:00 AM. Which works better for your schedule?", voice: "ai" },
-        { speaker: "caller", text: "Let's do Friday at 10:00 AM.", voice: "caller" },
-        { speaker: "ai", text: "All locked in for Friday at 10:00 AM! Your tune-up confirmation and technician arrival details have just been sent to your phone.", voice: "ai" }
-      ],
-      fsmTicket: {
-        customer: "Robert Chen",
-        address: "1520 Willow Creek Dr",
-        issue: "Pre-Season 21-Point AC Maintenance",
-        slot: "Friday, 10:00 AM – 12:00 PM",
-        value: "$69 Tune-Up + High-Value Maintenance Agreement Lead",
-        fsmStatus: "⚡ Direct Booking Created in Jobber Calendar"
-      }
+  const calcCallsSlider = document.getElementById('calcCallsSlider');
+  const calcDealSlider = document.getElementById('calcDealSlider');
+  const calcDropSlider = document.getElementById('calcDropSlider');
+
+  const calcCallsVal = document.getElementById('calcCallsVal');
+  const calcDealVal = document.getElementById('calcDealVal');
+  const calcDropVal = document.getElementById('calcDropVal');
+
+  const calcLostVal = document.getElementById('calcLostVal');
+  const calcRecoveredVal = document.getElementById('calcRecoveredVal');
+  const calcMonthlyRecovered = document.getElementById('calcMonthlyRecovered');
+  const calcRoiVal = document.getElementById('calcRoiVal');
+
+  function calculateRevenueRecovery() {
+    if (!calcCallsSlider || !calcDealSlider || !calcDropSlider) return;
+
+    const leads = parseInt(calcCallsSlider.value, 10);
+    const dealSize = parseInt(calcDealSlider.value, 10);
+    const dropRate = parseInt(calcDropSlider.value, 10);
+
+    // Update Slider Badges
+    if (calcCallsVal) calcCallsVal.textContent = `${leads.toLocaleString('en-US')} leads/mo`;
+    if (calcDealVal) calcDealVal.textContent = `$${dealSize.toLocaleString('en-US')}`;
+    if (calcDropVal) calcDropVal.textContent = `${dropRate}%`;
+
+    // Calculation Model (as per Carpero Brand Revamp Blueprint)
+    // Leaked Cash Flow = Volume * Deal Size * (Drop Rate / 100)
+    // 500 leads * $2,500 * 35% = $437,500 / year
+    const annualLeak = leads * dealSize * (dropRate / 100);
+    // Carpero Recapture Rate = 30% of leaked revenue
+    const annualRecovered = annualLeak * 0.30;
+    // Monthly Net & Founding Partner ROI
+    const monthlyGrossRecovered = annualRecovered / 12;
+    const monthlyCost = 497;
+    const monthlyNet = monthlyGrossRecovered - monthlyCost;
+    const roiPercentage = Math.round((monthlyNet / monthlyCost) * 100);
+
+    // Update Dynamic UI Displays
+    if (calcLostVal) {
+      calcLostVal.textContent = `-$${Math.round(annualLeak).toLocaleString('en-US')} / yr`;
     }
-  };
+    if (calcRecoveredVal) {
+      calcRecoveredVal.textContent = `+$${Math.round(annualRecovered).toLocaleString('en-US')} / yr`;
+    }
+    if (calcMonthlyRecovered) {
+      calcMonthlyRecovered.textContent = `+$${Math.round(monthlyNet).toLocaleString('en-US')}/mo Net`;
+    }
+    if (calcRoiVal) {
+      calcRoiVal.textContent = `${roiPercentage.toLocaleString('en-US')}% ROI`;
+    }
+  }
 
-  let currentScenarioKey = 'emergency';
-  let isSimPlaying = false;
-  let simTimeoutId = null;
-
-  const threadEl = document.getElementById('dialogueThread');
-  const simStatusEl = document.getElementById('simStatusText');
-  const waveBars = document.querySelectorAll('.wave-bar');
-  const playSimBtn = document.getElementById('playSimBtn');
-  const fsmBanner = document.getElementById('fsmBookingBanner');
-  const fsmDetailsEl = document.getElementById('fsmBannerDetails');
-
-  // Scenario Buttons
-  document.querySelectorAll('.scenario-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      currentScenarioKey = btn.dataset.scenario || 'emergency';
-      resetSimulation();
-    });
+  [calcCallsSlider, calcDealSlider, calcDropSlider].forEach(slider => {
+    if (slider) {
+      slider.addEventListener('input', calculateRevenueRecovery);
+      slider.addEventListener('change', calculateRevenueRecovery);
+    }
   });
 
-  function startWaveform() {
-    waveBars.forEach(b => b.classList.add('animated'));
-  }
-
-  function stopWaveform() {
-    waveBars.forEach(b => b.classList.remove('animated'));
-  }
-
-  function speakText(text, isAi) {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = isAi ? 1.05 : 1.0;
-      utterance.pitch = isAi ? 1.1 : 0.95;
-      
-      // Attempt to pick a smooth English voice
-      const voices = window.speechSynthesis.getVoices();
-      if (voices.length > 0) {
-        if (isAi) {
-          const femaleVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Female') || v.name.includes('Zira') || v.name.includes('Samantha') || v.name.includes('Google US English')));
-          if (femaleVoice) utterance.voice = femaleVoice;
-        } else {
-          const maleVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Male') || v.name.includes('David') || v.name.includes('Natural')));
-          if (maleVoice) utterance.voice = maleVoice;
-        }
-      }
-      
-      utterance.onstart = () => startWaveform();
-      utterance.onend = () => stopWaveform();
-      utterance.onerror = () => stopWaveform();
-      window.speechSynthesis.speak(utterance);
-    }
-  }
-
-  function renderSimStep(stepIndex) {
-    const sc = scenarios[currentScenarioKey];
-    if (stepIndex >= sc.steps.length) {
-      // Completed!
-      isSimPlaying = false;
-      playSimBtn.innerHTML = `<span>▶ Replay Live Simulation</span>`;
-      simStatusEl.textContent = "Call Completed • Job Booked";
-      stopWaveform();
-
-      // Show FSM Sync Banner
-      if (fsmBanner && fsmDetailsEl) {
-        fsmDetailsEl.innerHTML = `
-          <strong>${sc.fsmTicket.customer}</strong> (${sc.fsmTicket.address})<br>
-          <em>${sc.fsmTicket.issue}</em><br>
-          <strong>Arrival Window:</strong> ${sc.fsmTicket.slot}<br>
-          <strong>Estimated Ticket:</strong> ${sc.fsmTicket.value}<br>
-          <span style="color: #34D399; font-weight: 700;">${sc.fsmTicket.fsmStatus}</span>
-        `;
-        fsmBanner.classList.add('show');
-      }
-      return;
-    }
-
-    const step = sc.steps[stepIndex];
-    const isAi = step.speaker === 'ai';
-
-    simStatusEl.textContent = isAi ? "AI Receptionist Speaking (Live 2-Way Triage)..." : "Homeowner Speaking...";
-    startWaveform();
-
-    // Create chat bubble
-    const bubble = document.createElement('div');
-    bubble.className = `chat-bubble ${step.speaker}`;
-    bubble.innerHTML = `
-      <span class="speaker-tag">${isAi ? '⚡ 24/7 AI Receptionist' : '👤 Caller'}</span>
-      <p>${step.text}</p>
-    `;
-    threadEl.appendChild(bubble);
-    threadEl.scrollTop = threadEl.scrollHeight;
-
-    speakText(step.text, isAi);
-
-    // Calculate reading time + buffer
-    const duration = Math.max(3000, step.text.split(' ').length * 340);
-    simTimeoutId = setTimeout(() => {
-      renderSimStep(stepIndex + 1);
-    }, duration);
-  }
-
-  function runSimulation() {
-    if (isSimPlaying) {
-      resetSimulation();
-      return;
-    }
-
-    resetSimulation();
-    isSimPlaying = true;
-    playSimBtn.innerHTML = `<span>⏹ Stop Simulation</span>`;
-    renderSimStep(0);
-  }
-
-  function resetSimulation() {
-    if (simTimeoutId) clearTimeout(simTimeoutId);
-    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    stopWaveform();
-    isSimPlaying = false;
-    playSimBtn.innerHTML = `<span>▶ Test Live Voice AI Call (6:45 PM Saturday)</span>`;
-    simStatusEl.textContent = "Ready • Click to Test";
-    threadEl.innerHTML = '';
-    if (fsmBanner) fsmBanner.classList.remove('show');
-  }
-
-  if (playSimBtn) {
-    playSimBtn.addEventListener('click', runSimulation);
-  }
-
-  // Pre-load voices if supported
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.onvoiceschanged = () => {
-      // voices ready
-    };
-  }
+  // Run on initial load
+  calculateRevenueRecovery();
 
   // =========================================================================
-  // 3. 15-Second Missed-Call Text-Back (MCTB) Simulator
+  // 3. Live Simulated Recovery Stream Telemetry
   // =========================================================================
-  const triggerMctbBtn = document.getElementById('triggerMctbBtn');
-  const mctbBody = document.getElementById('mctbPhoneBody');
-  const mctbTimer = document.getElementById('mctbTimerDisplay');
+  const feedStream = document.querySelector('.feed-stream');
+  const simulatedEvents = [
+    {
+      action: "Resurrected 38-day cold B2B pipeline lead → Booked $14,500 discovery demo",
+      val: "+$14,500 Pipeline"
+    },
+    {
+      action: "Intercepted failed card on $2,400/yr SaaS annual plan via instant 1-click SMS portal",
+      val: "+$2,400 Recovered"
+    },
+    {
+      action: "After-hours emergency AC replacement lead triaged in 9 seconds → Synced to dispatch",
+      val: "+$9,800 Replacement"
+    },
+    {
+      action: "Abandoned checkout flow intercepted via conversational voice → Completed transaction",
+      val: "+$3,200 ARR"
+    },
+    {
+      action: "Revived 60-day stalled proposal via custom multi-channel touchpoint",
+      val: "+$22,000 Pipeline"
+    },
+    {
+      action: "Silent churn prevented: updated expired payment method before subscription drop",
+      val: "+$1,800 ARR"
+    }
+  ];
 
-  let mctbTimeout = null;
+  let eventIndex = 0;
+  if (feedStream) {
+    setInterval(() => {
+      const ev = simulatedEvents[eventIndex % simulatedEvents.length];
+      eventIndex++;
 
-  function runMctbSimulation() {
-    if (!mctbBody) return;
-    if (mctbTimeout) clearTimeout(mctbTimeout);
+      const item = document.createElement('div');
+      item.className = 'feed-item';
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(-10px)';
+      item.style.transition = 'all 0.4s ease';
 
-    mctbBody.innerHTML = `
-      <div class="sms-timer-callout" id="mctbTimerDisplay">⏳ Caller hung up at 7:14:02 PM. Missed call logged...</div>
-    `;
-
-    let seconds = 0;
-    const interval = setInterval(() => {
-      seconds += 0.2;
-      const timerDisplay = document.getElementById('mctbTimerDisplay');
-      if (timerDisplay && seconds < 11.2) {
-        timerDisplay.textContent = `⚡ Speed-To-Lead Timer: ${seconds.toFixed(1)}s (Before they can dial next guy on Google)`;
-      }
-    }, 200);
-
-    mctbTimeout = setTimeout(() => {
-      clearInterval(interval);
-      const timerDisplay = document.getElementById('mctbTimerDisplay');
-      if (timerDisplay) {
-        timerDisplay.textContent = `✅ AI SMS Triggered in 11.4 Seconds (Contractor Saved!)`;
-      }
-
-      // Add AI text
-      const b1 = document.createElement('div');
-      b1.className = 'sms-bubble incoming';
-      b1.innerHTML = `
-        Hi Dave! Sorry we missed your call at Apex Air Heating & Cooling. Are you experiencing an AC or heating emergency? How can we help?
-        <div class="sms-timestamp">7:14 PM (11s later)</div>
+      item.innerHTML = `
+        <span class="feed-time">Just now</span>
+        <span class="feed-action">${ev.action}</span>
+        <span class="feed-val">${ev.val}</span>
       `;
-      mctbBody.appendChild(b1);
 
-      // Customer reply after 2.5s
-      setTimeout(() => {
-        const b2 = document.createElement('div');
-        b2.className = 'sms-bubble outgoing';
-        b2.innerHTML = `
-          Yes! Compressor keeps tripping the breaker outside. Do you have someone available early tomorrow?
-          <div class="sms-timestamp">7:15 PM</div>
-        `;
-        mctbBody.appendChild(b2);
+      feedStream.insertBefore(item, feedStream.firstChild);
 
-        // AI reply and booking link after 2s
-        setTimeout(() => {
-          const b3 = document.createElement('div');
-          b3.className = 'sms-bubble incoming';
-          b3.innerHTML = `
-            Absolutely. We have an emergency dispatch window tomorrow between 8am–10am. Our $89 diagnostic applies directly to any repair.<br><br>
-            Reply <strong>YES</strong> to lock this slot, or pick another time here: <span style="text-decoration:underline; color:#38BDF8;">apexair.dispatch/slot-482</span>
-            <div class="sms-timestamp">7:15 PM</div>
-          `;
-          mctbBody.appendChild(b3);
+      // Animate in
+      requestAnimationFrame(() => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      });
 
-          setTimeout(() => {
-            const b4 = document.createElement('div');
-            b4.className = 'sms-bubble outgoing';
-            b4.innerHTML = `
-              YES! Lock that in. Address is 412 Maple Ridge Rd.
-              <div class="sms-timestamp">7:16 PM</div>
-            `;
-            mctbBody.appendChild(b4);
-
-            const b5 = document.createElement('div');
-            b5.className = 'sms-bubble incoming';
-            b5.style.border = '1px solid #10B981';
-            b5.innerHTML = `
-              🎉 You're confirmed for 8am tomorrow with Mike! You'll receive a live technician tracker in the morning.
-              <div class="sms-timestamp">7:16 PM • Booked in ServiceTitan</div>
-            `;
-            mctbBody.appendChild(b5);
-          }, 1800);
-        }, 2000);
-      }, 2500);
-    }, 1500);
-  }
-
-  if (triggerMctbBtn) {
-    triggerMctbBtn.addEventListener('click', runMctbSimulation);
+      // Keep maximum 5 items visible in feed
+      const items = feedStream.querySelectorAll('.feed-item');
+      if (items.length > 5) {
+        items[items.length - 1].remove();
+      }
+    }, 24000); // Pulse a new verified autonomous action every 24 seconds
   }
 
   // =========================================================================
-  // 4. Interactive ROI & Lost Revenue Recovery Calculator
-  // =========================================================================
-  const callsSlider = document.getElementById('calcCallsSlider');
-  const missedRateSlider = document.getElementById('calcMissedRateSlider');
-  const quotesSlider = document.getElementById('calcQuotesSlider');
-
-  const callsValDisplay = document.getElementById('calcCallsVal');
-  const missedRateValDisplay = document.getElementById('calcMissedRateVal');
-  const quotesValDisplay = document.getElementById('calcQuotesVal');
-
-  const lostMonthlyDisplay = document.getElementById('calcLostMonthlyVal');
-  const recoveredMonthlyDisplay = document.getElementById('calcRecoveredMonthlyVal');
-  const netProfitDisplay = document.getElementById('calcNetProfitVal');
-  const roiMultiplierDisplay = document.getElementById('calcRoiMultiplier');
-
-  function calculateHvacRevenue() {
-    if (!callsSlider || !missedRateSlider || !quotesSlider) return;
-
-    const monthlyCalls = parseInt(callsSlider.value, 10);
-    const missedPct = parseInt(missedRateSlider.value, 10) / 100;
-    const deadQuotes = parseInt(quotesSlider.value, 10);
-
-    // Update slider badges
-    if (callsValDisplay) callsValDisplay.textContent = `${monthlyCalls} calls/mo`;
-    if (missedRateValDisplay) missedRateValDisplay.textContent = `${Math.round(missedPct * 100)}%`;
-    if (quotesValDisplay) quotesValDisplay.textContent = `${deadQuotes} quotes/mo`;
-
-    // Calculation Constants
-    const avgDiagnosticRepair = 380;       // $380 average repair ticket
-    const avgReplacementTicket = 10500;    // $10,500 average full replacement system
-    const monthlyRetainerCost = 497;       // Founding partner retainer
-
-    // Total missed calls
-    const missedCallsCount = monthlyCalls * missedPct;
-    // Estimated high-ticket replacements hidden in missed calls (1 out of every 15 missed calls is a replacement lead)
-    const missedReplacements = Math.floor(missedCallsCount * 0.07);
-    const missedRepairs = Math.floor(missedCallsCount * 0.45);
-
-    // Total monthly leak
-    const monthlyLeak = (missedRepairs * avgDiagnosticRepair) + 
-                        (missedReplacements * avgReplacementTicket) + 
-                        (deadQuotes * 0.65 * avgReplacementTicket);
-
-    // Conservative Autopilot Recovery (recovering 35% of missed repair calls + 1 to 3 replacement jobs + 15% dead quotes)
-    const recoveredRepairs = Math.max(5, Math.floor(missedRepairs * 0.35));
-    const recoveredReplacements = Math.max(1, Math.floor(missedReplacements * 0.40) + Math.floor(deadQuotes * 0.18));
-
-    const totalRecoveredCash = (recoveredRepairs * avgDiagnosticRepair) + (recoveredReplacements * avgReplacementTicket);
-    const netProfit = totalRecoveredCash - monthlyRetainerCost;
-    const roiPercentage = Math.round((netProfit / monthlyRetainerCost) * 100);
-
-    // Format numbers
-    const fmt = (n) => `$${n.toLocaleString('en-US')}`;
-
-    if (lostMonthlyDisplay) lostMonthlyDisplay.textContent = fmt(Math.round(monthlyLeak));
-    if (recoveredMonthlyDisplay) recoveredMonthlyDisplay.textContent = fmt(Math.round(totalRecoveredCash));
-    if (netProfitDisplay) netProfitDisplay.textContent = `+${fmt(Math.round(netProfit))}/mo`;
-    if (roiMultiplierDisplay) roiMultiplierDisplay.textContent = `${roiPercentage.toLocaleString()}% ROI`;
-  }
-
-  [callsSlider, missedRateSlider, quotesSlider].forEach(slider => {
-    if (slider) slider.addEventListener('input', calculateHvacRevenue);
-  });
-
-  calculateHvacRevenue();
-
-  // =========================================================================
-  // 5. Founding Partner Reservation Modal & Webhook Lead Dispatcher
+  // 4. Frictionless 15-Minute Audit Modal & Webhook Dispatch
   // =========================================================================
   const modalOverlay = document.getElementById('reservationModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
@@ -393,15 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalStep1 = document.getElementById('modalStep1');
   const modalStepSuccess = document.getElementById('modalStepSuccess');
 
-  function openModal(prefillZip = '') {
+  function openModal() {
     if (modalOverlay) {
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-
-      if (prefillZip) {
-        const zipField = document.getElementById('formZipCode');
-        if (zipField) zipField.value = prefillZip;
-      }
 
       if (modalStep1) modalStep1.classList.add('active');
       if (modalStepSuccess) modalStepSuccess.classList.remove('active');
@@ -415,12 +212,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Bind all CTA buttons with modal opener
+  // Bind all CTA buttons that open the modal
   document.querySelectorAll('.open-claim-modal, .open-reservation-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const prefill = btn.dataset.prefill || '';
-      openModal(prefill);
+      openModal();
     });
   });
 
@@ -434,6 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Escape key closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay?.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
   // Handle Form Submission
   if (reservationForm) {
     reservationForm.addEventListener('submit', async (e) => {
@@ -441,27 +244,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = reservationForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>⚡ Verifying Territory & Reserving...</span>`;
+      submitBtn.innerHTML = `<span>⚡ Securing Spot &amp; Generating Audit...</span>`;
+
+      const ownerName = document.getElementById('formOwnerName')?.value || '';
+      const email = document.getElementById('formEmail')?.value || '';
+      const phone = document.getElementById('formPhone')?.value || '';
+      const companyName = document.getElementById('formCompanyName')?.value || '';
+      const revRange = document.getElementById('formFsmSystem')?.value || '';
 
       const formData = {
-        companyName: document.getElementById('formCompanyName')?.value || '',
-        territoryZip: document.getElementById('formZipCode')?.value || '',
-        fsmSystem: document.getElementById('formFsmSystem')?.value || '',
-        ownerName: document.getElementById('formOwnerName')?.value || '',
-        phone: document.getElementById('formPhone')?.value || '',
-        email: document.getElementById('formEmail')?.value || '',
+        ownerName,
+        email,
+        phone,
+        companyName,
+        revenueRange: revRange,
         submittedAt: new Date().toISOString(),
-        offer: "The 24/7 HVAC Revenue Recovery Autopilot (Founding Partner)"
+        offer: "CARPERO™ Autonomous Revenue Recovery Systems (Founding Partner)"
       };
 
-      // Dispatch to configured Webhook (Zapier / Make / GHL)
-      if (config.webhookUrl && config.webhookUrl.startsWith('http')) {
+      // Dispatch to configured Webhook (Make / Zapier / GHL)
+      if (config.webhookUrl && config.webhookUrl.startsWith('http') && !config.webhookUrl.includes('your-webhook-id-here')) {
         try {
           await fetch(config.webhookUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
-            mode: 'no-cors' // Allows posting to external webhooks without CORS blockage
+            mode: 'no-cors'
           });
         } catch (err) {
           console.warn("Webhook dispatch error:", err);
@@ -470,51 +278,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Store in localStorage as backup lead record
       try {
-        const existingLeads = JSON.parse(localStorage.getItem('hvac_leads') || '[]');
+        const existingLeads = JSON.parse(localStorage.getItem('carpero_leads') || '[]');
         existingLeads.push(formData);
-        localStorage.setItem('hvac_leads', JSON.stringify(existingLeads));
+        localStorage.setItem('carpero_leads', JSON.stringify(existingLeads));
       } catch (err) {
         // storage disabled or full
       }
 
-      // Show success confirmation screen
+      // Show success step with pre-filled GHL calendar URL
       setTimeout(() => {
         if (modalStep1) modalStep1.classList.remove('active');
         if (modalStepSuccess) {
           modalStepSuccess.classList.add('active');
 
-          const confirmTerritory = document.getElementById('confirmedTerritoryName');
-          if (confirmTerritory) confirmTerritory.textContent = `${formData.companyName} (${formData.territoryZip})`;
+          const confirmCompany = document.getElementById('confirmedTerritoryName');
+          if (confirmCompany) {
+            confirmCompany.textContent = companyName || ownerName || "your company";
+          }
 
           const calendlyBtn = document.getElementById('openCalendlyBtn');
           if (calendlyBtn && config.calendarBookingUrl) {
             try {
               const url = new URL(config.calendarBookingUrl);
-              if (formData.ownerName) {
-                url.searchParams.set('name', formData.ownerName);
-                const nameParts = formData.ownerName.trim().split(/\s+/);
+              if (ownerName) {
+                url.searchParams.set('name', ownerName);
+                const nameParts = ownerName.trim().split(/\s+/);
                 url.searchParams.set('first_name', nameParts[0] || '');
                 if (nameParts.length > 1) {
                   url.searchParams.set('last_name', nameParts.slice(1).join(' '));
                 }
               }
-              if (formData.email) url.searchParams.set('email', formData.email);
-              if (formData.phone) url.searchParams.set('phone', formData.phone);
-              if (formData.companyName) url.searchParams.set('company_name', formData.companyName);
+              if (email) url.searchParams.set('email', email);
+              if (phone) url.searchParams.set('phone', phone);
+              if (companyName) url.searchParams.set('company_name', companyName);
               calendlyBtn.href = url.toString();
-            } catch (e) {
+            } catch (err) {
               calendlyBtn.href = config.calendarBookingUrl;
             }
           }
         }
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
-      }, 1000);
+      }, 700);
     });
   }
 
   // =========================================================================
-  // 7. FAQ Accordion Logic
+  // 5. FAQ Accordion Logic
   // =========================================================================
   document.querySelectorAll('.faq-question-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -535,22 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 8. Demo Navigation Tabs
-  // =========================================================================
-  document.querySelectorAll('.demo-tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.tab;
-      document.querySelectorAll('.demo-tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.demo-tab-content').forEach(c => c.classList.remove('active'));
-
-      btn.classList.add('active');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) targetContent.classList.add('active');
-    });
-  });
-
-  // =========================================================================
-  // 9. Sticky Header Glass & Scroll Spying
+  // 6. Sticky Header & Mobile Navigation Toggle
   // =========================================================================
   const siteHeader = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
@@ -559,26 +354,61 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       siteHeader?.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
 
-  // Mobile menu toggle
   const mobileToggle = document.getElementById('mobileToggleBtn');
   const navMenu = document.querySelector('.nav-menu');
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
-      if (navMenu.style.display === 'flex') {
+      const isOpen = navMenu.classList.contains('mobile-open');
+      if (isOpen) {
+        navMenu.classList.remove('mobile-open');
         navMenu.style.display = 'none';
       } else {
+        navMenu.classList.add('mobile-open');
         navMenu.style.display = 'flex';
         navMenu.style.flexDirection = 'column';
         navMenu.style.position = 'absolute';
-        navMenu.style.top = '72px';
+        navMenu.style.top = '100%';
         navMenu.style.left = '0';
         navMenu.style.right = '0';
-        navMenu.style.background = '#090E1A';
-        navMenu.style.padding = '1.5rem';
-        navMenu.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+        navMenu.style.background = 'rgba(7, 9, 14, 0.98)';
+        navMenu.style.padding = '1.75rem 2rem';
+        navMenu.style.borderBottom = '1px solid var(--carpero-border)';
+        navMenu.style.gap = '1.25rem';
       }
     });
+
+    // Close mobile menu when a nav link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove('mobile-open');
+          navMenu.style.display = 'none';
+        }
+      });
+    });
   }
+
+  // =========================================================================
+  // 7. Smooth Scrolling for Internal Anchors
+  // =========================================================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
 });
