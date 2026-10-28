@@ -13,15 +13,18 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-  <!-- Typography: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <!-- Typography: Plus Jakarta Sans, Inter, JetBrains Mono (Optimized 5-weight payload) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- A11y Skip Link -->
+  <a href="#top" class="skip-link">Skip to main content</a>
 
   <!-- =========================================================================
        SECTION 1: Glassmorphism Navigation Bar
@@ -29,11 +32,11 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="#" class="brand-logo" aria-label="Carpero Home">
-        <img src="assets/logo-horizontal.svg" alt="CARPERO™" class="brand-logo-img">
+        <img src="assets/logo-horizontal.svg" alt="CARPERO™" class="brand-logo-img" width="168" height="38">
       </a>
 
-      <nav>
-        <ul class="nav-menu">
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="primaryNavMenu">
           <li><a href="#the-leak">The Cash Bleed</a></li>
           <li><a href="#engines">The Recovery Engines</a></li>
           <li><a href="#calculator">ROI Calculator</a></li>
@@ -46,12 +49,15 @@
 
       <div class="nav-actions">
         <a href="tel:+18884822247" class="nav-phone dynamic-demo-phone">
-          📞 (888) 482-2247
+          <svg class="ui-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>(888) 482-2247</span>
         </a>
         <button class="btn btn-primary btn-sm open-claim-modal">
           Audit Leaked Revenue
         </button>
-        <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle Navigation">☰</button>
+        <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="primaryNavMenu">
+          <svg class="ui-icon menu-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </div>
     </div>
   </header>
@@ -91,11 +97,11 @@
 
               <!-- 1-Line Friction Reducer -->
               <div class="friction-reducer-line">
-                <span>✓ 100% 30-Day Performance Guarantee</span>
+                <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% 30-Day Performance Guarantee</span>
                 <span>•</span>
-                <span>✓ Under 48-Hour Turnkey Setup</span>
+                <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Under 48-Hour Turnkey Setup</span>
                 <span>•</span>
-                <span>✓ Zero Staff Retraining Required</span>
+                <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero Staff Retraining Required</span>
               </div>
             </div>
 
@@ -122,7 +128,7 @@
           <!-- Hero Right: 3D Master Mobius Visual Card -->
           <div class="hero-visual-card">
             <div class="hero-img-container">
-              <img src="assets/logo-master-3d.jpg" alt="Carpero 3D Master Mobius Recovery Loop" class="hero-master-img">
+              <img src="assets/logo-master-3d.jpg" alt="Carpero 3D Master Mobius Recovery Loop" class="hero-master-img" width="600" height="600" fetchpriority="high">
               <div class="hero-status-pill">
                 <div style="display:flex; align-items:center; gap:0.5rem; color:#00F59B;">
                   <span class="pulse-dot"></span>
@@ -239,20 +245,23 @@
               </p>
 
               <div class="engine-outcome-badge">
-                <span>⚡ Now You Can:</span>
+                <span class="badge-prefix"><svg class="ui-icon zap-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Now You Can:</span>
                 <span>Recover 15%–30% of dormant pipeline without extra ad spend.</span>
               </div>
 
               <!-- Visual Proof Element -->
               <div class="engine-proof-box">
                 <div class="proof-bubble ai">
-                  <strong>AI:</strong> "Hey David, saw you checked our growth package 3 weeks ago. Are you still looking to plug your pipeline leaks this quarter?"
+                  <div class="bubble-header"><span class="bubble-badge ai-badge">AI Agent</span></div>
+                  <p class="bubble-msg">"Hey David, saw you checked our growth package 3 weeks ago. Are you still looking to plug your pipeline leaks this quarter?"</p>
                 </div>
                 <div class="proof-bubble user">
-                  <strong>David:</strong> "Yes! Had a crazy week. Can we jump on a quick 15-min call tomorrow at 2 PM?"
+                  <div class="bubble-header"><span class="bubble-badge user-badge">Prospect</span></div>
+                  <p class="bubble-msg">"Yes! Had a crazy week. Can we jump on a quick 15-min call tomorrow at 2 PM?"</p>
                 </div>
                 <div class="proof-status-line">
-                  <span>✓ 2:00 PM Confirmed • Synced into CRM Calendar</span>
+                  <svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>2:00 PM Confirmed • Synced into CRM Calendar</span>
                 </div>
               </div>
             </div>
@@ -274,20 +283,23 @@
               </p>
 
               <div class="engine-outcome-badge">
-                <span>⚡ Now You Can:</span>
+                <span class="badge-prefix"><svg class="ui-icon zap-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Now You Can:</span>
                 <span>Protect 9% of monthly recurring revenue on pure autopilot.</span>
               </div>
 
               <!-- Visual Proof Element -->
               <div class="engine-proof-box">
                 <div class="proof-bubble user">
-                  <strong>Billing Event:</strong> Payment failed on Visa ...4291 ($1,250/mo renewal).
+                  <div class="bubble-header"><span class="bubble-badge user-badge">Billing Event</span></div>
+                  <p class="bubble-msg">Payment failed on Visa ...4291 ($1,250/mo renewal).</p>
                 </div>
                 <div class="proof-bubble ai">
-                  <strong>Carpero Engine:</strong> Dispatched 1-click mobile verification link via SMS.
+                  <div class="bubble-header"><span class="bubble-badge ai-badge">Carpero Engine</span></div>
+                  <p class="bubble-msg">Dispatched 1-click mobile verification link via SMS.</p>
                 </div>
                 <div class="proof-status-line">
-                  <span>✓ Card Updated (Mastercard ...8810) • $1,250 MRR Protected</span>
+                  <svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Card Updated (Mastercard ...8810) • $1,250 MRR Protected</span>
                 </div>
               </div>
             </div>
@@ -309,20 +321,23 @@
               </p>
 
               <div class="engine-outcome-badge">
-                <span>⚡ Now You Can:</span>
+                <span class="badge-prefix"><svg class="ui-icon zap-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Now You Can:</span>
                 <span>Catch buyers right as they hesitate, before they hire a competitor.</span>
               </div>
 
               <!-- Visual Proof Element -->
               <div class="engine-proof-box">
                 <div class="proof-bubble user">
-                  <strong>Telemetry Alert:</strong> Visitor abandoned booking calendar at step 2.
+                  <div class="bubble-header"><span class="bubble-badge user-badge">Telemetry Alert</span></div>
+                  <p class="bubble-msg">Visitor abandoned booking calendar at step 2.</p>
                 </div>
                 <div class="proof-bubble ai">
-                  <strong>Speed-To-Lead:</strong> Automated triage triggered in 11.2 seconds.
+                  <div class="bubble-header"><span class="bubble-badge ai-badge">Speed-To-Lead</span></div>
+                  <p class="bubble-msg">Automated triage triggered in 11.2 seconds.</p>
                 </div>
                 <div class="proof-status-line">
-                  <span>✓ Inquiry Answered • Appointment Confirmed</span>
+                  <svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Inquiry Answered • Appointment Confirmed</span>
                 </div>
               </div>
             </div>
@@ -477,7 +492,8 @@
               <span style="font-size:0.875rem; color:var(--carpero-text-secondary);">Dial our live demo line right now. Experience sub-600ms latency.</span>
             </div>
             <a href="tel:+18884822247" class="btn btn-primary dynamic-demo-phone" style="font-size:1.1rem; padding:0.85rem 1.75rem;">
-              📞 (888) 482-2247
+              <svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>(888) 482-2247</span>
             </a>
           </div>
         </div>
@@ -562,7 +578,10 @@
               <div class="tier-desc">Complete 48-Hour DFY Installation, CRM Webhook Integration, and 24/7 AI Recovery Engine.</div>
 
               <div style="background:rgba(0, 245, 155, 0.08); border:1px solid rgba(0, 245, 155, 0.25); border-radius:10px; padding:0.75rem 1rem; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; font-weight:700;">
-                <span style="color:#A7F3D0;">🔥 Founding Spots Status:</span>
+                <span style="color:#A7F3D0; display:flex; align-items:center; gap:0.4rem;">
+                  <svg class="ui-icon flame-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                  Founding Spots Status:
+                </span>
                 <span class="dynamic-spots-left" style="color:#FFFFFF; font-weight:900;">2 of 10 Spots Left</span>
               </div>
 
@@ -588,7 +607,7 @@
                 Claim 1 of 2 Founding Spots ($497/mo Locked) →
               </button>
               <div class="friction-reducer-line" style="justify-content:center; margin-top:0.75rem;">
-                <span>✓ 100% Performance Guarantee: Recovers revenue or pay $0</span>
+                <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> 100% Performance Guarantee: Recovers revenue or pay $0</span>
               </div>
             </div>
           </div>
@@ -640,51 +659,51 @@
 
         <div class="faq-container">
           <div class="faq-item active">
-            <button class="faq-question-btn">
+            <button class="faq-question-btn" id="faq-btn-1" aria-expanded="true" aria-controls="faq-ans-1">
               <span>Does this replace my existing sales reps or office staff?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
               No. It supercharges them. During business hours, your team works as normal. The Carpero engine takes over unworked leads that go cold after 3 days, handles peak overflow when multiple calls hit at once, and operates 24/7 on nights, weekends, and holidays to recover deals that would otherwise slip away.
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question-btn">
+            <button class="faq-question-btn" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
               <span>Does the conversational AI sound robotic or clunky like an old phone tree?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
               Not at all. We utilize ultra-low latency conversational voice models (sub-600ms latency) with natural inflections, contextual awareness, and human speech cadence. Most customers believe they are speaking with an expert local coordinator. You can dial (888) 482-2247 right now to hear it live.
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question-btn">
+            <button class="faq-question-btn" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
               <span>How does it integrate with our CRM or dispatch software?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
               We deploy custom API webhooks that sync directly with your existing tools—including HubSpot, Salesforce, GoHighLevel, ServiceTitan, Housecall Pro, and Jobber. When a lead is resurrected or a call is triaged, it creates or updates the customer record with full conversation transcripts and booking timestamps.
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question-btn">
+            <button class="faq-question-btn" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
               <span>How long does onboarding take, and what does my team have to do?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
               Onboarding takes under 48 hours and requires zero technical work from your team. We conduct a brief 15-minute calibration intake, build your custom conversational prompts, wire up the CRM webhooks, and let you test the audio live before flipping the switch.
             </div>
           </div>
 
           <div class="faq-item">
-            <button class="faq-question-btn">
+            <button class="faq-question-btn" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
               <span>What is the 30-Day Performance Guarantee?</span>
-              <span class="faq-icon">+</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
               If the Carpero system does not directly recover and book qualified revenue for your business in the first 30 days that you would have otherwise lost, you pay zero dollars. We refund 100% of your setup fee, and you keep all workflows and phone lines free.
             </div>
           </div>
@@ -712,16 +731,17 @@
               Request Autonomous Audit Report →
             </button>
             <a href="tel:+18884822247" class="btn btn-outline btn-lg dynamic-demo-phone">
-              📞 Call Live Demo: (888) 482-2247
+              <svg class="ui-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Call Live Demo: (888) 482-2247</span>
             </a>
           </div>
 
           <div class="friction-reducer-line" style="justify-content:center; margin-top:1.25rem;">
-            <span>✓ Free 15-minute audit</span>
+            <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Free 15-minute audit</span>
             <span>•</span>
-            <span>✓ No credit card required</span>
+            <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> No credit card required</span>
             <span>•</span>
-            <span>✓ Complete leak analysis delivered in 24 hours</span>
+            <span><svg class="ui-icon check-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Complete leak analysis delivered in 24 hours</span>
           </div>
         </div>
       </div>
@@ -736,7 +756,7 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/logo-horizontal.svg" alt="CARPERO™" class="footer-logo">
+          <img src="assets/logo-horizontal.svg" alt="CARPERO™" class="footer-logo" width="168" height="38">
           <p style="font-size:0.9rem; color:var(--carpero-text-secondary); margin-top:0.5rem;">
             Autonomous revenue recovery systems. Stop the bleed. Seize the revenue.
           </p>
@@ -784,7 +804,8 @@
       Audit Leaked Revenue →
     </button>
     <a href="tel:+18884822247" class="btn btn-outline dynamic-demo-phone">
-      📞 Dial Demo
+      <svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>Dial Demo</span>
     </a>
   </aside>
 
@@ -807,28 +828,28 @@
 
         <form id="territoryReservationForm">
           <div class="form-group">
-            <label class="form-label">Your Full Name *</label>
-            <input type="text" class="form-input" id="formOwnerName" placeholder="e.g. John Miller" required>
+            <label class="form-label" for="formOwnerName">Your Full Name *</label>
+            <input type="text" class="form-input" id="formOwnerName" placeholder="e.g. John Miller" autocomplete="name" required>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
-              <label class="form-label">Work Email *</label>
-              <input type="email" class="form-input" id="formEmail" placeholder="name@company.com" required>
+              <label class="form-label" for="formEmail">Work Email *</label>
+              <input type="email" class="form-input" id="formEmail" placeholder="name@company.com" autocomplete="email" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Direct Mobile Phone *</label>
-              <input type="tel" class="form-input" id="formPhone" placeholder="e.g. (555) 234-5678" required>
+              <label class="form-label" for="formPhone">Direct Mobile Phone *</label>
+              <input type="tel" class="form-input" id="formPhone" placeholder="e.g. (555) 234-5678" autocomplete="tel" required>
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
-              <label class="form-label">Company Name / Website URL *</label>
-              <input type="text" class="form-input" id="formCompanyName" placeholder="e.g. Apex Co or apex.com" required>
+              <label class="form-label" for="formCompanyName">Company Name / Website URL *</label>
+              <input type="text" class="form-input" id="formCompanyName" placeholder="e.g. Apex Co or apex.com" autocomplete="organization" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Monthly Revenue Range *</label>
+              <label class="form-label" for="formFsmSystem">Monthly Revenue Range *</label>
               <select class="form-select" id="formFsmSystem" required>
                 <option value="$50k-$250k">$50k – $250k / month</option>
                 <option value="$10k-$50k">$10k – $50k / month</option>
@@ -843,8 +864,9 @@
           </button>
         </form>
 
-        <div style="margin-top:1rem; font-size:0.75rem; color:var(--carpero-text-muted); text-align:center;">
-          🔒 Backed by our 100% Performance Guarantee. Zero spam.
+        <div style="margin-top:1rem; font-size:0.75rem; color:var(--carpero-text-muted); text-align:center; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+          <svg class="ui-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <span>Backed by our 100% Performance Guarantee. Zero spam.</span>
         </div>
       </div>
 

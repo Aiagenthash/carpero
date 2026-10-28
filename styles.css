@@ -28,6 +28,39 @@
   --space-16: 128px;
 }
 
+/* A11y Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background: var(--carpero-emerald);
+  color: var(--carpero-text-inverse);
+  padding: 0.75rem 1.25rem;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1.5rem;
+  outline: 3px solid #FFFFFF;
+}
+
+/* UI Icon Alignment */
+.ui-icon {
+  display: inline-block;
+  vertical-align: -2px;
+  flex-shrink: 0;
+}
+
+/* Accessible High-Contrast Focus Visible Rings (WCAG 2.2 AAA) */
+:focus-visible {
+  outline: 2px solid var(--carpero-cyan);
+  outline-offset: 3px;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -76,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   letter-spacing: -0.025em;
   font-weight: 800;
+  text-wrap: balance; /* Modern line wrapping eliminates single-word widows */
 }
 
 p {
@@ -107,6 +141,7 @@ a {
   text-decoration: none;
   white-space: nowrap;
   min-height: 48px;
+  touch-action: manipulation; /* Eliminates 300ms mobile tap delay */
 }
 
 .btn-primary {
@@ -511,12 +546,24 @@ a {
   gap: 1.25rem;
   position: relative;
   transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.leak-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--carpero-border-top-amber);
+  opacity: 0.6;
 }
 
 .leak-card:hover {
   transform: translateY(-4px);
   border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.12);
 }
 
 .leak-tag {
@@ -589,6 +636,18 @@ a {
   gap: 1.5rem;
   position: relative;
   transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.engine-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--carpero-border-top-emerald);
+  opacity: 0.6;
 }
 
 .engine-card:hover {
@@ -625,16 +684,26 @@ a {
 
 .engine-outcome-badge {
   display: flex;
-  align-items: center;
-  gap: 0.45rem;
+  align-items: flex-start;
+  gap: 0.5rem;
   font-size: 0.825rem;
-  font-weight: 700;
-  color: var(--carpero-emerald);
+  font-weight: 600;
+  color: #A7F3D0;
   background: var(--carpero-emerald-soft);
   border: 1px solid rgba(0, 245, 155, 0.25);
-  padding: 0.5rem 0.85rem;
+  padding: 0.6rem 0.9rem;
   border-radius: 8px;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
+  line-height: 1.45;
+}
+
+.engine-outcome-badge .badge-prefix {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 800;
+  color: var(--carpero-emerald);
+  white-space: nowrap;
 }
 
 .engine-proof-box {
@@ -646,13 +715,43 @@ a {
   font-size: 0.775rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .proof-bubble {
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 0.85rem;
   border-radius: 8px;
   line-height: 1.4;
+}
+
+.bubble-header {
+  margin-bottom: 0.3rem;
+}
+
+.bubble-badge {
+  font-size: 0.675rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.bubble-badge.ai-badge {
+  background: rgba(0, 245, 155, 0.2);
+  color: var(--carpero-emerald);
+}
+
+.bubble-badge.user-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: #CBD5E1;
+}
+
+.bubble-msg {
+  color: inherit;
+  font-size: 0.775rem;
+  line-height: 1.45;
 }
 
 .proof-bubble.ai {
@@ -715,6 +814,19 @@ a {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3rem;
   box-shadow: var(--carpero-card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.calculator-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--carpero-border-top-emerald);
+  opacity: 0.6;
 }
 
 .calc-inputs {
@@ -754,23 +866,42 @@ a {
 
 input[type="range"] {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 8px;
   background: #1C2333;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
+  appearance: none;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--carpero-emerald);
-  box-shadow: 0 0 12px var(--carpero-emerald);
+  box-shadow: 0 0 14px var(--carpero-emerald);
   cursor: pointer;
-  transition: transform 0.1s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px var(--carpero-cyan);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--carpero-emerald);
+  box-shadow: 0 0 14px var(--carpero-emerald);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
@@ -1355,7 +1486,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-top: 1px solid var(--carpero-border-glow);
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
     gap: 0.75rem;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
   }
@@ -1366,10 +1497,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
     font-size: 0.85rem;
     text-align: center;
     white-space: nowrap;
+    min-height: 44px; /* Minimum accessible touch target */
   }
 
   body {
-    padding-bottom: 70px; /* Offset for sticky mobile bar */
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); /* Dynamic offset for sticky mobile bar */
   }
 }
 
@@ -1383,5 +1515,21 @@ input[type="range"]::-webkit-slider-thumb:hover {
   }
   .pricing-card {
     padding: 2rem 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Accessibility (WCAG 2.2 / Apple HIG Standard)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .pulse-dot {
+    animation: none;
   }
 }
