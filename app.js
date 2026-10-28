@@ -72,12 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const calcMonthlyRecovered = document.getElementById('calcMonthlyRecovered');
   const calcRoiVal = document.getElementById('calcRoiVal');
 
+  function updateSliderFill(slider) {
+    if (!slider) return;
+    const min = parseFloat(slider.min) || 0;
+    const max = parseFloat(slider.max) || 100;
+    const val = parseFloat(slider.value) || 0;
+    const pct = Math.min(100, Math.max(0, ((val - min) / (max - min)) * 100));
+    slider.style.background = `linear-gradient(to right, #00F59B 0%, #00D2FF ${pct}%, #1C2333 ${pct}%, #1C2333 100%)`;
+  }
+
   function calculateRevenueRecovery() {
     if (!calcCallsSlider || !calcDealSlider || !calcDropSlider) return;
 
     const leads = parseInt(calcCallsSlider.value, 10);
     const dealSize = parseInt(calcDealSlider.value, 10);
     const dropRate = parseInt(calcDropSlider.value, 10);
+
+    // Dynamic Slider Fill Progress Tracks
+    updateSliderFill(calcCallsSlider);
+    updateSliderFill(calcDealSlider);
+    updateSliderFill(calcDropSlider);
 
     // Update Slider Badges
     if (calcCallsVal) calcCallsVal.textContent = `${leads.toLocaleString('en-US')} leads/mo`;
@@ -122,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   calculateRevenueRecovery();
 
   // =========================================================================
-  // 3. Live Simulated Recovery Stream Telemetry
+  // 3. Live Simulated Recovery Stream Telemetry (Reduced-Motion Aware)
   // =========================================================================
   const feedStream = document.querySelector('.feed-stream');
   const simulatedEvents = [
@@ -153,7 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let eventIndex = 0;
-  if (feedStream) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (feedStream && !prefersReducedMotion) {
     setInterval(() => {
       const ev = simulatedEvents[eventIndex % simulatedEvents.length];
       eventIndex++;
@@ -344,22 +360,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 5. FAQ Accordion Logic
+  // 5. FAQ Accordion Logic (WCAG AA A11y Compliant)
   // =========================================================================
   document.querySelectorAll('.faq-question-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const parent = btn.closest('.faq-item');
       const isActive = parent.classList.contains('active');
 
-      // Close all other items
+      // Close all other items and set aria-expanded="false"
       document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== parent) item.classList.remove('active');
+        if (item !== parent) {
+          item.classList.remove('active');
+          item.querySelector('.faq-question-btn')?.setAttribute('aria-expanded', 'false');
+        }
       });
 
       if (isActive) {
         parent.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
       } else {
         parent.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -384,6 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isOpen) {
         navMenu.classList.remove('mobile-open');
         navMenu.style.display = 'none';
+        mobileToggle.setAttribute('aria-expanded', 'false');
       } else {
         navMenu.classList.add('mobile-open');
         navMenu.style.display = 'flex';
@@ -396,6 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.style.padding = '1.75rem 2rem';
         navMenu.style.borderBottom = '1px solid var(--carpero-border)';
         navMenu.style.gap = '1.25rem';
+        mobileToggle.setAttribute('aria-expanded', 'true');
       }
     });
 
@@ -405,6 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 768) {
           navMenu.classList.remove('mobile-open');
           navMenu.style.display = 'none';
+          mobileToggle.setAttribute('aria-expanded', 'false');
         }
       });
     });

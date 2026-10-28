@@ -36,13 +36,24 @@
   /* Typography Colors */
   --carpero-text-primary: #FFFFFF;
   --carpero-text-secondary: #94A3B8;
-  --carpero-text-muted: #64748B;
+  --carpero-text-muted: #8292A6; /* WCAG 2.1 AA compliant (5.5:1 against #07090E) */
   --carpero-text-inverse: #07090E;
 
   /* Status Colors */
   --carpero-status-recovered: #00F59B;
   --carpero-status-leaking: #F59E0B;
   --carpero-status-lost: #EF4444;
+
+  /* Spacing and Radius Tokens (ui-ux-pro-max standard) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Card Gradient Highlights */
+  --carpero-border-top-emerald: linear-gradient(90deg, rgba(0, 245, 155, 0.4) 0%, rgba(0, 210, 255, 0.2) 50%, transparent 100%);
+  --carpero-border-top-amber: linear-gradient(90deg, rgba(245, 158, 11, 0.5) 0%, transparent 80%);
 
   /* ==========================================================
      TYPOGRAPHY SYSTEM
