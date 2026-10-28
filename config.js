@@ -13,8 +13,8 @@ window.CARPERO_CONFIG = {
   supportEmail: "hello@carpero.com",
   
   // Live Demo Phone Number
-  demoPhoneNumber: "(888) 482-2247",
-  demoPhoneNumberRaw: "+18884822247",
+  demoPhoneNumber: "(817) 760-2428",
+  demoPhoneNumberRaw: "+18177602428",
   
   // Founding Partner Scarcity Settings
   foundingPartnerSpotsTotal: 10,
@@ -46,11 +46,11 @@ window.CARPERO_CONFIG = {
     pipelineId: "WeVSKhJlQeCBr6MXxAbF"
   },
 
-  // Webhook Endpoint (Zapier, Make, or GHL)
-  webhookUrl: "https://hook.us1.make.com/your-webhook-id-here",
+  // Webhook Endpoint (Live GHL Inbound Webhook Sync)
+  webhookUrl: "https://services.leadconnectorhq.com/hooks/4rsitvcF0nWZXBh5xzf8/webhook-trigger/4ec7c241-9ad8-4c57-af4d-8ed2df56f244",
   
-  // Calendar / Booking Link (Live GHL Sub-account calendar on discovery.carpero.com)
-  calendarBookingUrl: "https://discovery.carpero.com/calendar-page"
+  // Calendar / Booking Link (Live GHL 3-Minute Live AI Demo Call)
+  calendarBookingUrl: "https://api.leadconnectorhq.com/widget/booking/Orm5YQIwK1MgN9w5Z2Vw"
 };
 
 // Backward-compatibility alias
