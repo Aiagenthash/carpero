@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Demo phone numbers
     const demoPhones = document.querySelectorAll('.dynamic-demo-phone');
     demoPhones.forEach(el => {
-      const phone = config.demoPhoneNumber || "(888) 482-2247";
-      const raw = config.demoPhoneNumberRaw || "+18884822247";
+      const phone = config.demoPhoneNumber || "(817) 760-2428";
+      const raw = config.demoPhoneNumberRaw || "+18177602428";
       if (el.tagName === 'A') {
         el.href = `tel:${raw}`;
         if (el.textContent.includes('(') || el.textContent.trim().startsWith('📞')) {
@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const phone = document.getElementById('formPhone')?.value || '';
       const companyName = document.getElementById('formCompanyName')?.value || '';
       const revRange = document.getElementById('formFsmSystem')?.value || '';
+      const smsOptIn = Boolean(document.getElementById('smsOptInCheckbox')?.checked);
 
       const formData = {
         ownerName,
@@ -274,6 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
         phone,
         companyName,
         revenueRange: revRange,
+        smsOptIn,
+        source: "carpero.com",
         submittedAt: new Date().toISOString(),
         offer: "CARPERO™ Autonomous Revenue Recovery Systems (Founding Partner)"
       };

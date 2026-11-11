@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Client Billing & Retainer Portal | CARPERO™</title>
+  <meta name="description" content="Manage your CARPERO™ 24/7 HVAC AI voice dispatch retainer, download invoices, update payment methods, and access W-9 vendor documentation.">
+  <meta property="og:title" content="Client Billing & Retainer Portal | CARPERO™">
+  <meta property="og:description" content="Self-service billing, invoice downloads, and subscription management for CARPERO™ HVAC contractor partners.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://carpero.com/billing">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .billing-page-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.08) 0%, rgba(7, 9, 14, 0.95) 70%), #07090E;
+      color: #FFFFFF;
+    }
+
+    .billing-hero {
+      padding: 3.5rem 1.5rem 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .billing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #00D2FF;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    .billing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+
+    @media (min-width: 992px) {
+      .billing-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+      }
+    }
+
+    .billing-card {
+      background: rgba(15, 19, 28, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .retainer-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .retainer-price .amount {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .retainer-price .period {
+      font-size: 1.1rem;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+    }
+
+    .feature-list li svg {
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+      color: #00D2FF;
+    }
+
+    .action-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .action-info h4 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .action-info p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #94A3B8;
+    }
+
+    .btn-portal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #00D2FF 0%, #0072FF 100%);
+      color: #07090E;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-portal:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 210, 255, 0.35);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .guarantee-banner {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #A7F3D0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body class="billing-page-wrap">
+
+  <!-- Header -->
+  <header style="padding: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.06); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%;">
+    <a href="https://carpero.com" style="display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: #FFFFFF; font-weight: 900; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem;">
+      <span style="color: #00D2FF;">CARPERO</span>™
+    </a>
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <a href="tel:+18446853121" style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #94A3B8; text-decoration: none;">
+        <span style="display: inline-block; width: 8px; height: 8px; background: #10B981; border-radius: 50%;"></span>
+        Support Desk: +1 (844) 685-3121
+      </a>
+      <a href="https://carpero.com" class="btn-outline" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;">Back to Site</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="billing-hero">
+    <div class="billing-badge">Client Accounts & Billing</div>
+    <h1 style="font-size: 2.5rem; font-weight: 800; line-height: 1.15; margin: 0 0 1rem; font-family: 'Plus Jakarta Sans', sans-serif;">
+      Self-Service Retainer & Invoice Portal
+    </h1>
+    <p style="font-size: 1.05rem; color: #94A3B8; max-width: 650px; margin: 0 auto; line-height: 1.6;">
+      Manage your monthly 24/7 AI Voice Dispatch subscription, download tax receipts, update payment cards, and access corporate vendor documentation.
+    </p>
+  </section>
+
+  <!-- Main Grid -->
+  <main class="billing-grid">
+
+    <!-- Card 1: Subscription Breakdown -->
+    <div class="billing-card">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: #00D2FF; text-transform: uppercase; letter-spacing: 0.05em;">Active Partnership Retainer</span>
+        <span style="background: rgba(16, 185, 129, 0.15); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px;">Billed Monthly</span>
+      </div>
+
+      <div class="retainer-price">
+        <span class="amount">$497</span>
+        <span class="period">/ month flat</span>
+      </div>
+
+      <p style="font-size: 0.9rem; color: #94A3B8; margin: 0 0 1rem; line-height: 1.5;">
+        Covers full 24/7/365 after-hours coverage for residential and commercial heating, cooling, and refrigeration breakdown triage.
+      </p>
+
+      <ul class="feature-list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span><strong>300 Voice Dispatch Minutes Included:</strong> Handled by Sarah in 2 rings with conversational natural speech.</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span><strong>Emergency Technician SMS Escalation:</strong> Real-time text dispatch directly to on-call duty trucks.</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span><strong>Calendar & Dispatch Board Sync:</strong> Auto-schedules diagnostic visits directly into your FSM calendar.</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span><strong>Predictable Overage:</strong> Additional voice time beyond 300 minutes billed at just <strong>$0.25/minute</strong> in arrears.</span>
+        </li>
+      </ul>
+
+      <div class="guarantee-banner">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span><strong>Pilot Guarantee:</strong> 5 recovered service jobs in your first 30 days or you pay $0. Zero long-term contracts.</span>
+      </div>
+    </div>
+
+    <!-- Card 2: Self-Service Action Center -->
+    <div class="billing-card">
+      <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem; font-family: 'Plus Jakarta Sans', sans-serif;">Self-Service Account Desk</h3>
+      <p style="font-size: 0.9rem; color: #94A3B8; margin: 0 0 1.5rem;">Manage payment methods, receipts, or request vendor setup directly with accounting.</p>
+
+      <!-- Action 1: Update Payment Method -->
+      <div class="action-box">
+        <div class="action-info">
+          <h4>Payment Method & Retainer Card</h4>
+          <p>Update credit card or ACH bank debit on file.</p>
+        </div>
+        <a href="mailto:billing@carpero.com?subject=Update%20Payment%20Method%20Request%20-%20CARPERO" class="btn-portal" style="font-size: 0.85rem; padding: 0.6rem 1rem;">Update Card</a>
+      </div>
+
+      <!-- Action 2: Past Invoices -->
+      <div class="action-box">
+        <div class="action-info">
+          <h4>Invoices & Tax Receipts</h4>
+          <p>Download monthly PDF invoices for tax filing.</p>
+        </div>
+        <a href="mailto:billing@carpero.com?subject=Invoice%20Receipt%20Copy%20Request%20-%20CARPERO" class="btn-outline">Get Receipts</a>
+      </div>
+
+      <!-- Action 3: W-9 Form -->
+      <div class="action-box">
+        <div class="action-info">
+          <h4>Corporate W-9 & Vendor Setup</h4>
+          <p>Request our signed W-9 for contractor AP.</p>
+        </div>
+        <a href="mailto:billing@carpero.com?subject=W-9%20Vendor%20Packet%20Request%20-%20CARPERO" class="btn-outline">Request W-9</a>
+      </div>
+
+      <!-- Action 4: Tech & Line Support -->
+      <div class="action-box" style="margin-bottom: 0;">
+        <div class="action-info">
+          <h4>On-Call Dispatch Schedule Changes</h4>
+          <p>Update weekend tech numbers or diagnostic fees.</p>
+        </div>
+        <a href="mailto:support@carpero.com?subject=On-Call%20Tech%20Schedule%20Update%20-%20CARPERO" class="btn-outline">Update Techs</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="margin-top: auto; padding: 2rem 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; font-size: 0.85rem; color: #64748B;">
+    <p style="margin: 0 0 0.5rem;">
+      &copy; 2026 CARPERO™ 24/7 AI Voice Dispatch | Fort Worth Metroplex, Texas 76102
+    </p>
+    <div style="display: flex; justify-content: center; gap: 1.5rem;">
+      <a href="privacy.html" style="color: #94A3B8; text-decoration: none;">Privacy Policy</a>
+      <a href="terms.html" style="color: #94A3B8; text-decoration: none;">Terms of Service</a>
+      <a href="mailto:billing@carpero.com" style="color: #94A3B8; text-decoration: none;">billing@carpero.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -47,9 +47,9 @@ window.CARPERO_CONFIG = {
   },
 
   // Webhook Endpoint (Live GHL Inbound Webhook Sync)
-  webhookUrl: "https://services.leadconnectorhq.com/hooks/4rsitvcF0nWZXBh5xzf8/webhook-trigger/4ec7c241-9ad8-4c57-af4d-8ed2df56f244",
+  webhookUrl: "https://services.leadconnectorhq.com/hooks/4rsitvcF0nWZXBh5xzf8/webhook-trigger/clotI3Zx2uQtbE5t5qeL",
   
-  // Calendar / Booking Link (Live GHL 3-Minute Live AI Demo Call)
+  // Calendar / Booking Link (Live GHL 15-Minute Live AI Dispatch Walkthrough)
   calendarBookingUrl: "https://api.leadconnectorhq.com/widget/booking/Orm5YQIwK1MgN9w5Z2Vw"
 };
 
